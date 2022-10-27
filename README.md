@@ -1,1 +1,1 @@
-Welocme tu prise
+Welcome tu prise
