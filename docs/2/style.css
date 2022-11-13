@@ -24,8 +24,8 @@ p{
     height: auto;
 }
 .pic{
-    justify-items: center;
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 100px;
     column-gap: 20px;
