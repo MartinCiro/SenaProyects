@@ -9,6 +9,12 @@ body{/* Cuerpo de fondo */
     grid-template-columns: repeat(3, 1fr);
     line-height: 1px;
     position: relative;
+    background-image: url(https://www.anipedia.net/images/gifs-peces.gif);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 33.75px 37.5px;
+    animation: dr 5s steps(15) infinite;
 }
 
 h1{/* Titulo */
@@ -51,6 +57,14 @@ p{/* Color de la letra lista  */
     }
     100%{
         background-position-x: -800px;
+    }
+}
+@keyframes dr {
+    0%{
+        background-position-x: 96vw;
+    }
+    100%{
+        background-position-x: -96vw;
     }
 }
 button{
