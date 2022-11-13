@@ -1,66 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-.men{
-    align-self: center;
-    border: 1px solid rgb(71, 161, 86);
+body{/* Cuerpo de fondo */
+    background-color: rgb(21, 22, 22);
+}
+.men{/* Divido la pantalla en columnas, borde, tamaño, va el contenido*/
     display: grid;
+    border: 1px solid rgb(71, 161, 86);
     overflow-wrap: break-word;
     grid-template-columns: repeat(3, 1fr);
-    background-color: rgb(76, 154, 221);
-    width: 100%;
+    line-height: 1px;
+    position: relative;
 }
 
-body{
-    background-color: rgb(21, 22, 22);
-    justify-items: center;
-    width: 90%;
-}
-h1{
-    text-align: center;
-    font-size: 3rem;
+h1{/* Titulo */
+    display: grid;
+    place-content: center;
+    font-size: 5vw;
     background-image: linear-gradient(to right, #ff0000, #001aff);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    width: 85%; 
 }
-.lio{
-    background-color: rgb(127, 172, 255);
-    font-family: 'Raleway', sans-serif;
-    justify-items: center;
-    font-size: 2rem;
-    border: 2px solid rgb(21, 233, 74);
-    overflow-wrap: break-word;
-    height: auto;
-}
-li{
-    color: rgb(162, 0, 226);
-    font-size: 3rem;
-}
-p{
-    color: rgb(233, 221, 221);
-    font-size: 3rem;
-}
-button{
-    background-color: rgb(57, 201, 206);
-    font-style: italic;
-    font-size: 2rem;
-    cursor: pointer;
-    font-family: fantasy;
-    overflow-wrap: break-word;
-    border: 2px solid rgb(218, 46, 46);
-    border-radius: 4px;
-    height: 3rem;
-}
-ol{
+ol{/* Parte de la lista */
+    display: grid;
     background-image: url(https://www.gifsanimados.org/data/media/158/beisbol-imagen-animada-0079.gif);
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-color: rgb(76, 154, 221);
+    border: 2px solid red;
+    overflow-wrap: break-word;
+    height: 25vw;
 }
-.io{
+li{/* Color de la lista */
+    color: rgb(162, 0, 226);
+    font-size: 2vw;
+    height: 2vh;
+}
+p{/* Color de la letra lista  */
+    color: rgb(233, 221, 221);
+    height: 1.6vw;
+}
+
+.io{/* sprite */
     width: auto;
     animation: sprite 2s steps(10) infinite;
+    background-position-x: right;
     background-size: 35px;
-}
+}/* Anima el sprite */
 @keyframes sprite {
     0%{
         background-position-x: 140;
@@ -69,6 +53,18 @@ ol{
         background-position-x: -800px;
     }
 }
-.ri{
-    width: 130%;
+button{
+    background-color: rgb(57, 201, 206);
+    font-style: italic;
+    font-size: 2vw;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    border: 2px solid rgb(218, 46, 46);
+    border-radius: 55%;
+    height: 3vw;
+    width: 3vw;
+}
+img{
+    width: 35vw;
+    display: grid;
 }
