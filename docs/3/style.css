@@ -12,6 +12,9 @@ body{
     background-image: url(https://media.tenor.com/QU1JL8nxGqgAAAAC/goku-filme.gif);
     background-repeat: no-repeat;
     background-position:right;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
 }
 h1{
     background-color: blue;
@@ -52,4 +55,38 @@ button:hover{
 button:hover:after{
     opacity: 1;
     right: 100px;
+}
+.Num{
+    color: red;
+    text-align: center;
+}
+table{
+    width: 99vw;
+    height: 100vh;
+    border: .1vw solid cadetblue;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    border-collapse: collapse;
+    background-color: aliceblue;
+}
+.table td{
+    border: .2vw solid cadetblue;
+}
+.table td:hover{
+    background-image: url(https://www.gifsanimados.org/data/media/194/pez-y-pescado-imagen-animada-0097.gif);
+    background-repeat: no-repeat;
+    color: blue;
+    animation: sprite 2s steps(10) infinite;
+}
+thead{
+    color: #8400FF;
+    background-color: rgb(104, 238, 231);
+}
+@keyframes sprite {
+    0%{
+        background-position-x: 140;
+    }
+    100%{
+        background-position-x: 800px;
+    }
 }
