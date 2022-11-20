@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');/*font-family: 'Raleway', sans-serif;*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 2vw;
+}
+.Formulario{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: khaki;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+}
+
+input::placeholder{
+    font-family: 'Raleway', sans-serif;
+    background-color:transparent;
+    text-align: center;
+}
+input:active{
+    background-color: transparent;
+}
+.lottie{
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: grid;
+    text-align: center;
+    background-color: aqua;  
+}
+lottie-player{
+    width: 55vw; 
+    height: 50vh;
+    background:transparent;
+    position: relative;
+}
+.pg2{
+    display: grid;
+    justify-content: center;
+    width: 10vw; 
+    height: 20vh;
+    position: relative; 
+}
+.lottie2{
+    display: grid;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-align: center;
+    background-color: rgba(167, 209, 233, 0.897);
+  
+}
+.Formulario2{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(140, 203, 240);
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+}
+.Pg2{
+    background-color: rgb(255, 0, 221);
+}
+textarea{
+    width: 25vw;
+    height: 10vh;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    max-height: 50vh;
+    max-width: 40vw;
+}
