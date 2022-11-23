@@ -1,0 +1,16 @@
+body{
+    background-image: url(../media/icons/head.png); 
+    background-repeat: no-repeat; 
+    background-size: 100%; 
+    background-position: initial; 
+    background-color: rgb(255, 180, 67);
+}
+.one{
+    text-align: end; 
+    font-size: large; 
+    font-family: fantasy; 
+    font-size-adjust: inherit;
+}
+.two{
+    padding: 30%; font-size: 300%; text-align: center; font-style: italic;
+}

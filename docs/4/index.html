@@ -4,111 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
-    <!-- <link rel="stylesheet" href="style.css"> ctrl + k, ctrl + c-->
-    <link rel="shortcut icon" href="https://www.sena.edu.co/es-co/comunidades/instructores/assets/convocatoria-app/favicon.ico" type="image/x-icon">
-    <style>
-        h1{
-            text-align: center;
-            font-size: 3rem;
-            background-image: linear-gradient(to right, #ff0000, #8400FF);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;  
-        }
-        p{
-            color: red;
-            font-size: 2rem;
-            text-align: center;
-        }
-        .im{
-            width: 25rem; 
-            border: 2px solid rgb(206, 133, 133);
-            overflow-wrap: break-word;
-        }
-        .letter{
-            color: aliceblue;
-            width: 30rem;
-            border: 2px solid rgb(32, 60, 187);
-            overflow-wrap: break-word;
-            height: auto;
-        }
-        .pic{
-            justify-items: center;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto 100px;
-            column-gap: 20px;
-            gap: 10px;
-            
-        }
-        /*Sprite*/
-        .io{
-            width: 28rem;
-            height: 14rem;
-            background-image: url(3.png); 
-            animation: sprite 2s steps(10) infinite;
-            transform: scale(.3);
-            background-color: rgba(0, 4, 255, 0.65);
-        }
-        @keyframes sprite {
-            0%{
-                background-position-x: 0;
-            }
-            100%{
-                background-position-x: -1000px;
-            }
-        }
-        button{
-            align-items: center;
-            background-color: rgb(241, 192, 192);
-            font-size: 2rem;
-            cursor: pointer;
-            font-family: fantasy;
-            overflow-wrap: break-word;
-            border: 2px solid rgb(218, 46, 46);
-            border-radius: 4px;
-            height: 3rem;
-            transform: translateY(50%);            
-        }
-        button:after{
-            color: #8400FF;
-            content: '» 👉';
-            position: absolute;
-            opacity: 0;
-            top: 9px;
-            right: 120px;
-            transition: 0.5s;
-        }
-        button:hover{
-            padding-right: 24px;
-            padding-left: 8px;
-        }
-        button:hover:after{
-            opacity: 1;
-            right: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Party</title>
 </head>
-<body style="background-color: rgb(17, 16, 16);">
-    <h1>El hoy</h1>
-    <p><i style="color: rgb(20, 20, 20); background-color: azure;">Buenas sean las</i> <b>noches.</b></p>
-    <p style="color: rgb(10, 234, 241);"><u>Hace falta soñar</u> <b>Canserbero</b><br>Frases:</p><hr>
-    <div class="pic">
-    <picture class="im">
-        <source srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfBdFORQPfPYpy5rPDGWqn2tIh_II49UMsxg&usqp=CAU" media="(min-width: 1000px)" style="width: 25rem;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIA7eeDSwjAEE1jCeBdUcKLFYwdsHta8999lNXksf7fn8VAdcf70qJPlnIKqaq6NhRtZk&usqp=CAU" style="width: 25rem;">
-    </picture>
-
-        <p class="letter"><em>Las anticonceptivas</em> están prohibidas<br>Por una <strong style="color: red;">iglesia</strong> que no aprecia el número de muertes por el <s>sida</s><br>Cuya cura no ha podido ser conseguida<br>Aunque la prioridad es encontrar en el espacio <b>vida</b></p>
-
-    <picture class="im">
-        <source srcset="https://pbs.twimg.com/media/FLZyuXmXIAYlmIO.jpg" media="(min-width: 1000px)" style="width: 25rem; height: 40rem;">
-        <img src="https://frasesdelavida.com/wp-content/uploads/2016/03/Frases-de-Canserbero.-2.jpg" style="width: 25rem; height: 25rem;">
-    </picture>
-    <p class="aut">Autor:</p>
-    <div class="io"></div>
-    <button><a href="https://i.pinimg.com/originals/81/23/dc/8123dc009719f8c641b91b9a5802c1bd.jpg" target="_blank" rel="noopener noreferrer" style="color: rgb(190, 162, 162);">Frase del artista</a></button>
+<body class="all">
+    <h1>Mi tag de las 20 canciones favoritas</h1>
+    <hr>
+    <h2 class="t2">A continuación te presento mi tag de las 20 canciones</h2>
+    <ol class="oli">
+        <li>¿Cuál es tu canción favorita?</li>
+        <li>Canción que más odias.</li>
+        <li>¿Qué canción te pone triste?</li>
+        <li>Canción que te recuerde a alguien.</li>
+        <li>Canción que te pone feliz.</li>
+        <li>Canción que te recuerde a un momento en específico.</li>
+        <li>Canción cuya letra te sabes perfectamente.</li>
+        <li>Canción que te haga bailar.</li>
+        <li>Canción que te ayuda a dormir.</li>
+        <li>Canción que te gusta en secreto.</li>
+        <li>Con qué canción te identificas.</li>
+        <li>Qué canción te encantaba y ahora odias.</li>
+        <li>Canción de tu disco favorito.</li>
+        <li>Qué canción puedes tocar con un instrumento.</li>
+        <li>Qué canción que te gustaría cantar en público.</li>
+        <li>Canción que te gusta para conducir.</li>
+        <li>Canción de tu infancia.</li>
+        <li>Canción que nadie espere que te guste.</li>
+        <li>Canción que quieres que pongan en tu funeral.</li>
+        <li>Qué canción te gustaría que pusieras en tu boda.</li>
+    </ol>
+    <h3 class="t2">Haz click en el botón para conocer mis respuestas</h3>
+    <div class="con">
+        <a href="respuestas.html">
+            <button>Tócame para ver más</button>
+        </a>
     </div>
 </body>
 </html>

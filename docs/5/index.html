@@ -4,61 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación</title>
-    <!-- <link rel="stylesheet" href="style.css"> ctrl + k, ctrl + c-->
-    <link rel="shortcut icon" href="https://www.sena.edu.co/es-co/comunidades/instructores/assets/convocatoria-app/favicon.ico" type="image/x-icon">
-    <style>
-        p{
-        color: red;
-        font-size: 2rem;
-        text-align: center;
-        }
-        i{
-
-        }
-        .im{
-            display:block; 
-            float: left;
-            width: 25rem; 
-            background-color: transparent;
-        }
-        .letter{
-            background-color: rgb(17, 16, 16);
-            color: aliceblue;
-            width: 30rem;
-            display: inline;
-        }
-        h1{
-            text-align: center;
-            font-size: 3rem;
-            background-image: linear-gradient(to right, rgb(231, 76, 65), rgb(218, 191, 75));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;  
-        }
-        div{
-            align-items: center;
-            border: 2px solid rgb(206, 133, 133);
-            height: auto;
-            grid: 24rem;
-            flex-direction: row-reverse;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../media/icons/Logo1.png" type="image/x-icon">
+    <title>Formularios</title>
 </head>
-<body style="background-color: aquamarine;">
-    <h1>Notas de hoy</h1>
-    <p><i style="color: rgb(20, 20, 20); background-color: azure;">Buenas sean las</i> <b>noches.</b></p>
-    <p style="color: rgb(63, 55, 55);"><u>Hace falta soñar </u><b>Canserbero</b><br>Frases: <hr></p>
-    <div>
-    <picture class="im">
-        <source srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfBdFORQPfPYpy5rPDGWqn2tIh_II49UMsxg&usqp=CAU" media="(min-width: 1000px)" style="width: 25rem;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIA7eeDSwjAEE1jCeBdUcKLFYwdsHta8999lNXksf7fn8VAdcf70qJPlnIKqaq6NhRtZk&usqp=CAU" style="width: 25rem;">
-    </picture>
-        <p class="letter"><em>Las anticonceptivas</em> están prohibidas<br>Por una <strong style="color: red;">iglesia</strong> que no aprecia el número de muertes por el <s>sida</s><br>Cuya cura no ha podido ser conseguida<br>Aunque la prioridad es encontrar en el espacio vida</p>
-    <picture class="im" style="float: right;">
-        <source srcset="https://pbs.twimg.com/media/FLZyuXmXIAYlmIO.jpg" media="(min-width: 1000px)" style="width: 25rem;">
-        <img src="https://frasesdelavida.com/wp-content/uploads/2016/03/Frases-de-Canserbero.-2.jpg" style="width: 25rem;">
-    </picture>
+<body class="Pg1">
+    <div class="lottie">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_6G1vvxxQaI.json" speed="1" loop autoplay></lottie-player>
+    </div>
+    <div class="Formulario">
+    <form action="Enviando.html" method="get">
+            <label for="nombre">Nombre: </label>
+            <input name="nombre" id="nombre" type="text" placeholder="Ingresa tu nombre" required>
+            <br>
+            <label for="apellido">Apellido: </label>
+            <input name="Apellido" id="apellido" type="text" placeholder="Ingresa tu apellido" required>
+            <br>
+            <button>Agregar</button>
+        </form>
     </div>
 </body>
 </html>
