@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 body{/* Cuerpo de fondo */
     background-color: rgb(21, 22, 22);
+    
 }
 .men{/* Divido la pantalla en columnas, borde, tamaño, va el contenido*/
     display: grid;
@@ -50,6 +51,7 @@ p{/* Color de la letra lista  */
     background-position-x: right;
     background-position-y: center;
     background-size: 35px;
+    height: 50vh;
     
 }/* Anima el sprite */
 @keyframes sprite {
