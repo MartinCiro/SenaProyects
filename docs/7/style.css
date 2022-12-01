@@ -288,7 +288,6 @@
   header{
     display: flex;
     min-height: 70px;
-    height: 70px;
     background-color: coral;
     justify-content: space-between;
     align-items: center;
@@ -309,6 +308,7 @@
   nav a{
     font-weight: 600;
     padding-right: 10px;
+    overflow: hidden;
   }
   nav a:hover{
     color: white;
@@ -318,7 +318,7 @@
         flex-direction: column;
     }
     nav {
-        padding: 10 px 0 px;
+        padding: 10 vw 0 vh;
     }
   }
   h1{
