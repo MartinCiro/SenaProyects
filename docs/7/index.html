@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://my.cloudlabs.us/assets/css/index.css">
     <link rel="shortcut icon" href="https://www.freeiconspng.com/download-ico/24437" type="image/x-icon">
     <title>Responsive</title>
 </head>
@@ -17,11 +18,108 @@
             <h2 class="nombre-empresa">M&C</h2>
         </a>
         <nav>
-            <a href="" class="nav-link">Inicio</a>
             <a href="" class="nav-link">Sobre nosotros</a>
             <a href="" class="nav-link">Contacto</a>
+            <a href="" class="nav-link">Repositorio Git</a>
         </nav>
     </header>
+    <div class="col-md-12" style="height: 100%; display: flex; justify-content: center">
+        <!--<iframe style="height: 100%"
+                src="http://auth.senasofiaplus.edu.co/josso?josso_back_to=https://my.cloudlabs.us/login/validarUsuarioSena" onLoad="console.log('https://my.cloudlabs.us/login/validarUsuarioSena')"></iframe>-->
+        <form method="post" action="https://my.cloudlabs.us/login/validarUsuarioSena" name="gwLogin" id="gwLogin">
+            <input type="hidden" name="action" value="login">
+            <input type="hidden" name="username" id="username" value="">
+
+            <table height="350" border="0" id="marcoingreso" class="ingreso_sofiaplus" style="padding: 10px 0px">
+                <tbody><tr>
+                    <td align="center" valign="top">
+                        <h2>
+                            Ingreso <span class="subinstruccionesgrandes">Usuarios
+                      registrados</span>
+                        </h2>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" valign="top"><span class="texto_input">Tipo
+                    de documento de identidad</span></td>
+                </tr>
+                <tr>
+                    <td height="24" align="center" valign="top">
+
+                        <div class="form-group"><select name="typeDocument" id="typeDocument" size="1" class="form-control" style="width: 190px">
+                            <option value="CC" selected="selected">Cédula de
+                                Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="NCS">Número ciego SENA</option>
+                            <option value="PS">Pasaporte</option>
+                            <option value="DNI">Documento Nacional de Identificación</option>
+                            <option value="NIT">Número de Identificación Tributaria</option>
+                            <option value="PR">PEP - RAMV</option>
+                            <option value="PEP">PEP</option>
+                        </select><span class="material-input"></span></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding-left: 30px" valign="top">
+                        <span class="texto_input">Número de documento:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <div class="form-group is-empty"><input type="text" name="document" id="document" class="form-control" style="width: 190px" maxlength="20" size="28"><span class="material-input"></span></div></td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 30px" valign="top">
+                        <span class="texto_input">Contraseña:</span>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td valign="top" align="center">
+                        <div class="form-group is-empty"><input type="password" name="password" id="passwd" class="form-control" size="28" value="" style="width: 190px"><span class="material-input"></span></div>
+
+                    </td>
+                </tr>
+
+                <!--<tr id='sucursalDiv' style='display: none'>
+                    <td align='center' valign='top' style='padding-left: 4px;'><span
+                            style='margin-left: -95px;' class='texto_input'>Sucursal:</span><br />
+                        <label> <input type='text' name='loginGatewayForm' id='branch' class='input_blanco_obligatorio' size='28' onkeydown='pasarAMayusculas(this)'
+                                       onkeyup='pasarAMayusculas(this)' onblur='pasarAMayusculas(this)'
+                                       onclick='pasarAMayusculas(this)' style='margin-left: 18px;' />
+                        </label></td>
+                </tr>-->
+
+                <tr>
+                    <td align="center" valign="top">
+
+                        <div id="mensajes" width="20" style="max-width:200px" height="22" class="verde_real">
+                        <font color="red">
+                            
+                        </font>
+                    </div></td>
+                </tr>
+
+                <tr>
+                    <td align="center" valign="top">
+                        <a target="top" class="verde" href="http://oferta.senasofiaplus.edu.co/sofia-oferta/recuperarclave.html">
+                            <img src="https://my.cloudlabs.us/assets/img/imagenesEmail/key.png" width="20" height="22">¿Olvidé mi contraseña?</a><br>
+                        <a target="top" class="verde" href="http://portal.senasofiaplus.edu.co/index.php?option=com_content&amp;task=view&amp;id=239&amp;Itemid=254" title="Si usted NO es funcionario y desea activar su usuario debe comunicarse con el Call Center.
+        Si usted es un funcionario y desea activar su usuario debe enviar una solicitud a través de correo electrónico al Administrador de Centro o al Administrador del Sistema.">¿Su
+                            usuario está Bloqueado o Inactivo?</a> <br>
+                        <br> <input type="submit" name="ingresar" class="boton_verde" value="Ingresar" id="ingresar">
+                    </td>
+                </tr>
+
+            </tbody></table>
+
+
+        </form>
+    </div>
     <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster" style="justify-content: center; justify-items: center; display:flex;">
         <div class="wheel"></div>
         <div class="hamster">
@@ -44,6 +142,5 @@
     <a href="https://uiverse.io/Nawsome/wet-mayfly-23" target="_blank" rel="noopener noreferrer">
         <button><b>Fuente</b></button>
     </a>
-
 </body>
 </html>
