@@ -116,4 +116,8 @@ body{
     .nav-toggle{
         display: block;
     }
+
+    .nav-menu_visible{
+        left: 0;
+    }
 }
