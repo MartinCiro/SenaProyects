@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bfcc67fa04.js" crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+    
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+    body{
+        font-family: 'Nerko One', cursive;
+        padding: 90px 20px 0;
+        background-color: aquamarine;
+        font-size: 25px;
+    }
+</style>
+<script>
+    document.writeln("<h1 style='text-align: center;'>Elaboracion de programas en javascript</h1>")
+    function suma(num1, num2, num3){
+        return num1 + num2 + num3;
+    }
+    function resta(num1, num2){
+        return num1 - num2;
+    }
+    function mul(num1, num2){
+        return num1 * num2;
+    }
+    function div(num1, num2){
+        return num1 / num2;
+    }
+
+    document.writeln ("<ol><li>Calcular y mostrar la suma, resta, multiplicación, división, potencia de dos números capturados por el teclado.</li><br/>");
+    
+    num1=parseInt(prompt("Ingrese el primer numero entero"));
+    num2=parseInt(prompt("Ingrese el segundo numero entero"));
+    num3=parseInt(prompt("Ingrese el tercer numero entero"));
+    if (isNaN(num1) || isNaN(num2)) {
+        alert ("Valores nulos");
+        document.writeln ("Has ingresado valores invalidos, por favor vuelva a intentarlo.<br/>");
+    }else{
+        document.writeln("El primer numero ingresado es " + num1 + " y el segundo numero es " + num2 + " y su suma es: " + suma(num1, num2, 0) + ", su resta es: " + resta(num1, num2) + ", su multiplicacion es: " + mul(num1, num2) + ", su division es: "+ div(num1, num2) + " y la potencia entre ambos es: " + Math.pow(num1, num2)+ "<br/>");
+    }
+
+    document.writeln ("<br><li>Dado el radio de una circunferencia se pide calcular y mostrar en pantalla su área pi = 3.1416 Área = pi * r ^ (2). (Elevar a la potencia usando  base**potencia o Math.pow(base, potencia)).</li><br/>");
+        const pi = 3.1416;
+    radio=parseFloat(prompt("Ingrese el radio de la circunferencia"))
+
+    area=pi* Math.pow(radio, 2)
+    if (isNaN(radio)) {
+        alert ("Valor incorrecto, por favor verifique");
+        document.writeln ("Has ingresado valores invalidos, por favor vuelva a intentarlo<br/>");
+    }else{
+        document.writeln("<p>El area de la <span style='color: red;'>circunferencia</span> es: " + area + "<br/></p>");
+    }
+    document.writeln ("<br><li>Dada la temperatura en grados Fahrenheit (F) convertirla a grados centígrados (C) C = 5/9 * (F - 32).</li><br/>");
+    temp=parseFloat(prompt("Ingrese la temperatura en grados Fahrenheit (F)"))
+    if (isNaN(temp)) {
+        alert ("Valor incorrecto, por favor verifique");
+        document.writeln ("Has ingresado valores invalidos, por favor vuelva a intentarlo<br/>");
+    }else{
+    document.writeln ("<br> La temperatura en grados centigrados es: <br>",div(5,9)*resta(temp,32));
+    }
+    document.writeln ("<br><li>Dado los valores A, B, C capturados por el teclado se pide calcular y mostrar dichos resultados<br><ul><li>El cuadrado de la suma</li><li>El producto de los valores leídos</li><li>El cubo del Producto</li><li>La diferencia entre el cuadrado de la suma con respecto al cubo del producto</li></ul></li><br/>");
+
+    document.writeln ("El el cuadrado de la suma entre los 3 valores es: " + Math.pow(suma(num1, num2, num3), 2) + "<br/>" + " El producto de los valores es: " + mul(num1, num2)*num3 + "<br/>" + " El cubo del producto es: " + Math.pow(mul(num1, num2*num3), 3) + "<br/>" + " La diferencia entre el cuadrado de la suma con respecto al cubo del producto es: " + resta( (Math.pow(mul(num1, num2*num3), 3)),(Math.pow(suma(num1, num2, num3), 2))) + "<br/>"); 
+
+    document.writeln ("<br><li>De un estudiante se conoce los siguientes datos:<br><ul><li>Código</li><li>Nombre</li><li>Nota 1</li><li>Nota 2</li><li>Nota 3</li></ul>Calcular y mostrar su promedio.</li><br/>");
+
+    const nombre="Juan de Jesus el pepe";
+    const codigo=123456;
+    const n1=10;
+    const n2=8;
+    const n3=9;
+    document.writeln("El promedio de " + nombre + ", " + codigo + " y cuyas notas son: " + n1 + ", " + n2 + ", " + n3 + " es: "+ div(suma(n1,n2,n3),3) + "<br></ul>");
+
+</script>
+<body>
+</body>
+</html>
