@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica javascript</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+    body{
+        font-family: 'Nerko One', cursive;
+        padding: 90px 20px 0;
+        background-color: aquamarine;
+        font-size: 25px;
+    }
+</style>
+<script>
+    document.writeln("<h1 style='text-align: center;'>Elaboracion de programas en javascript</h1>")
+    
+
+    var eleccion = parseInt(prompt("Desea ingresar valores manuales? 1 (sí) o 2 (no)"));
+    if (eleccion == 1) {
+        document.writeln ("<ol><li>Al ingresar una nota entre 0 y 3 devolver la sección correspondiente de acuerdo con la siguiente secuencia: Muy mal — 0, Mal - 1, Regular — 2 y Bien —3.</li>");
+    nota=0
+    //nota=parseInt(prompt("Ingrese la nota de 0 a 3"));
+    if (nota>=0 && nota<=3){
+        if (nota===0) {
+            document.writeln ("Muy mal.<br/>");
+        }else if (nota===1){
+            document.writeln ("Mal.<br/>");
+        }else if (nota===2){
+            document.writeln ("Regular.<br/>");
+        }
+        else{
+            document.writeln("Bien.<br/>");
+        }
+    }
+    document.writeln ("<br/><li>Leer una persona el nombre y la edad. Si es mayor de edad mostrar por pantalla su nombre.</li>");
+    edad=parseInt(prompt("Ingrese su edad"));
+    nombre=prompt("Ingrese su nombre");
+    if(edad>=18){
+        document.writeln ("Hola, " + nombre + " eres mayor de edad con tus " + edad + " años.<br/>");
+    }else{
+        document.writeln ("Hola, " + nombre + " eres menor de edad con tus " + edad + " años.<br/>");
+    }
+    document.writeln ("<br/><li>'Mega Pizzas' ofrece pizzas sencillas (S), dobles (D) y triples (T), las cuales tienen un costo de $20, $25 y $30 respectivamente. La empresa acepta tarjetas de crédito con un cargo de 5 % sobre la compra o efectivo sin cargo adicional. Suponiendo que los clientes adquieren una pizza realice un algoritmo para determinar cuánto deben pagar. (En efectivo y con tarjeta)</li>");
+
+    pizza=prompt("Ingrese la categoria de la pizza, S (Sencilla), D (Doble), T (Triple)");
+    pizza=pizza.toLowerCase();
+    Mpago=prompt("Ingrese el metodo de pago, Efectivo (Ef), Tarjeta (Tarjeta)");
+    Mpago=Mpago.toLowerCase();
+    if (Mpago=="efectivo"){
+        document.writeln ("El metodo de pago no tiene cargo adicional"); 
+    }else{
+        if (pizza=="s"){
+            document.writeln ("Ha decido pizza sencilla y pago con tarjeta, el valor es de: " + parseFloat(20*0.05 + 20) + "<br/>"); 
+        }else if (pizza=="d"){
+            document.writeln ("Ha decido pizza doble y pago con tarjeta, el valor es de: " + parseFloat(25*0.05 + 25) + "<br/>"); 
+        }else if (pizza=="t"){
+            document.writeln ("Ha decido pizza triple y pago con tarjeta, el valor es de: " + parseFloat(30*0.05 + 30) + "<br/>"); 
+        }
+    }
+    document.writeln ("<br/><li>Crear un algoritmo para calcular y mostrar el porcentaje de aumento y el nuevo salario de un empleado. La entrada para el algoritmo es el salario actual del empleado y un número que indica la calificación de desempeño (3 = excelente, 2 = bueno y 1 = deficiente). Un empleado con una calificación de 3 recibirá un aumento del 5,5%, un empleado con una calificación de 2 recibirá un aumento del 3,5% y uno con una calificación de 1 recibirá un aumento del 1,5%.</li>");
+
+    slAc=parseInt(prompt("Ingrese el salario actual del empleado"));
+    desem=parseInt(prompt("Ingrese la calificación de desempeño (3 = excelente, 2 = bueno y 1 = deficiente)"));
+    if (desem>0 && desem<=3){
+        if (desem===3){
+            document.writeln ("El empleado tiene calificacion de 3 y por ello recibirá un aumento del 5,5%, el salario es de: " + parseFloat(slAc*0.055 + slAc) + "<br/>");
+        }else if (desem===2){
+            document.writeln ("El empleado tiene calificacion de 2 y por ello recibirá un aumento del 3,5% y el salario es de: " + parseFloat(slAc*0.035 + slAc) + "<br/>");
+        }else if (desem===1){
+            document.writeln ("El empleado tiene calificacion de 1 y por ello recibirá un aumento del 1,5% y el salario es de: " + parseFloat(slAc*0.015 + slAc) + "<br/>");
+        }
+    }else{
+        document.writeln ("Has ingresado datos erroneos, por favor intente de nuevo");
+    }
+
+    
+    document.writeln ("<br/><li>Crear una calculadora de IMC, debe solicitar el peso y la altura de la persona e informar cuál es su IMC según la siguiente tabla: <center><img src='https://raw.githubusercontent.com/MartinCiro/SenaProyects/gh-pages/docs/media/icons/screen03.jpg' width='650vw' height='auto'></center>");
+
+    peso=parseInt(prompt("Ingrese el peso de la persona en kilogramos"));
+    altura=parseFloat(prompt("Ingrese la altura de la persona en metros"));
+    
+    imc=parseFloat(peso/(altura*altura));
+    if (altura>=0.2){
+        if (imc<18.5){
+            document.writeln("Está bajo de peso</li></ol>");
+        }else if (imc>=18.5 && imc<=24.99){
+            document.writeln("Está en su peso normal</li></ol>");
+        }else if (imc>=25 && imc<=29.99){
+            document.writeln("Está en sobrepeso </li></ol>");
+        }else if (imc>=30){
+            document.writeln("Está obeso </li></ol>");
+        }
+    }
+}else if (eleccion == 2){
+        document.writeln ("<ol><li>Al ingresar una nota entre 0 y 3 devolver la sección correspondiente de acuerdo con la siguiente secuencia: Muy mal — 0, Mal - 1, Regular — 2 y Bien —3.</li>");
+    nota=0
+    //nota=parseInt(prompt("Ingrese la nota de 0 a 3"));
+    if (nota>=0 && nota<=3){
+        if (nota===0) {
+            document.writeln ("Muy mal.<br/>");
+        }else if (nota===1){
+            document.writeln ("Mal.<br/>");
+        }else if (nota===2){
+            document.writeln ("Regular.<br/>");
+        }
+        else{
+            document.writeln("Bien.<br/>");
+        }
+    }
+    document.writeln ("<br/><li>Leer una persona el nombre y la edad. Si es mayor de edad mostrar por pantalla su nombre.</li>");
+    //edad=parseInt(prompt("Ingrese su edad"));
+    //nombre=prompt("Ingrese su nombre");
+    edad=18;
+    nombre="Juan";
+    if(edad>=18){
+        document.writeln ("Hola, " + nombre + " eres mayor de edad con tus " + edad + " años.<br/>");
+    }else{
+        document.writeln ("Hola, " + nombre + " eres menor de edad con tus " + edad + " años.<br/>");
+    }
+    document.writeln ("<br/><li>'Mega Pizzas' ofrece pizzas sencillas (S), dobles (D) y triples (T), las cuales tienen un costo de $20, $25 y $30 respectivamente. La empresa acepta tarjetas de crédito con un cargo de 5 % sobre la compra o efectivo sin cargo adicional. Suponiendo que los clientes adquieren una pizza realice un algoritmo para determinar cuánto deben pagar. (En efectivo y con tarjeta)</li>");
+
+    // pizza=prompt("Ingrese la categoria de la pizza, S (Sencilla), D (Doble), T (Triple)");
+    // pizza=pizza.toLowerCase();
+    // Mpago=prompt("Ingrese el metodo de pago, Efectivo (Ef), Tarjeta (Tarjeta)");
+    // Mpago=Mpago.toLowerCase();
+    pizza="d".toLowerCase();
+    Mpago="tarjeta".toLowerCase();
+    if (Mpago=="efectivo"){
+        document.writeln ("El metodo de pago no tiene cargo adicional"); 
+    }else{
+        if (pizza=="s"){
+            document.writeln ("Ha decido pizza sencilla y pago con tarjeta, el valor es de: " + parseFloat(20*0.05 + 20) + "<br/>"); 
+        }else if (pizza=="d"){
+            document.writeln ("Ha decido pizza doble y pago con tarjeta, el valor es de: " + parseFloat(25*0.05 + 25) + "<br/>"); 
+        }else if (pizza=="t"){
+            document.writeln ("Ha decido pizza triple y pago con tarjeta, el valor es de: " + parseFloat(30*0.05 + 30) + "<br/>"); 
+        }
+    }
+    document.writeln ("<br/><li>Crear un algoritmo para calcular y mostrar el porcentaje de aumento y el nuevo salario de un empleado. La entrada para el algoritmo es el salario actual del empleado y un número que indica la calificación de desempeño (3 = excelente, 2 = bueno y 1 = deficiente). Un empleado con una calificación de 3 recibirá un aumento del 5,5%, un empleado con una calificación de 2 recibirá un aumento del 3,5% y uno con una calificación de 1 recibirá un aumento del 1,5%.</li>");
+
+    //slAc=parseInt(prompt("Ingrese el salario actual del empleado"));
+    //desem=parseInt(prompt("Ingrese la calificación de desempeño (3 = excelente, 2 = bueno y 1 = deficiente)"));
+    slAc=1000000
+    desem=3
+    if (desem>0 && desem<=3){
+        if (desem===3){
+            document.writeln ("El empleado tiene calificacion de 3 y por ello recibirá un aumento del 5,5%, el salario es de: " + parseFloat(slAc*0.055 + slAc) + "<br/>");
+        }else if (desem===2){
+            document.writeln ("El empleado tiene calificacion de 2 y por ello recibirá un aumento del 3,5% y el salario es de: " + parseFloat(slAc*0.035 + slAc) + "<br/>");
+        }else if (desem===1){
+            document.writeln ("El empleado tiene calificacion de 1 y por ello recibirá un aumento del 1,5% y el salario es de: " + parseFloat(slAc*0.015 + slAc) + "<br/>");
+        }
+    }else{
+        document.writeln ("Has ingresado datos erroneos, por favor intente de nuevo");
+    }
+
+    
+    document.writeln ("<br/><li>Crear una calculadora de IMC, debe solicitar el peso y la altura de la persona e informar cuál es su IMC según la siguiente tabla: <center><img src='https://raw.githubusercontent.com/MartinCiro/SenaProyects/gh-pages/docs/media/icons/screen03.jpg' width='650vw' height='auto'></center>");
+
+    //peso=parseInt(prompt("Ingrese el peso de la persona en kilogramos"));
+    //altura=parseFloat(prompt("Ingrese la altura de la persona en metros"));
+    peso=68
+    altura=parseFloat(1.65)
+    imc=parseFloat(peso/(altura*altura));
+    if (altura>=0.2){
+        if (imc<18.5){
+            document.writeln("Está bajo de peso</li></ol>");
+        }else if (imc>=18.5 && imc<=24.99){
+            document.writeln("Está en su peso normal</li></ol>");
+        }else if (imc>=25 && imc<=29.99){
+            document.writeln("Está en sobrepeso </li></ol>");
+        }else if (imc>=30){
+            document.writeln("Está obeso </li></ol>");
+        }
+    }else{
+        document.writeln("Has ingresado datos erroneos, por favor intente de nuevo");
+    }
+    }
+</script>
+<body>
+</body>
+</html>
