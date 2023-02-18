@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica javascript</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+    body{
+        font-family: 'Nerko One', cursive;
+        padding: 90px 20px 0;
+        background-color: aquamarine;
+        font-size: 25px;
+    }
+</style>
+<script>
+    document.writeln("<h1 style='text-align: center;'>Elaboracion de programas en javascript</h1>")
+    //Ingresar dos números enteros y restar el menor del mayor e imprimir el resultado. 
+    var vl1=parseInt(prompt("Ingrese el primer valor entero"));
+    var vl2=parseInt(prompt("Ingrese el segundo valor entero"));
+    if (vl1>=0 && vl2>=0){
+        if (vl1>vl2){
+            document.writeln("El valor mayor es: " + vl1 + " y el menor es: " + vl2 + ", su resta es: " + (vl2-vl1));
+        }else{
+            document.writeln("El valor mayor es: " + vl2 + " y el menor es: " + vl1 + ", su resta es: " + (vl1-vl2));
+        }
+    }else{
+    document.writeln("No ha ingresado valores positivos");
+    }
+    
+</script>
+<body>
+</body>
+</html>
