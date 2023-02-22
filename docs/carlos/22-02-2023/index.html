@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copia y pega javascript</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+    body{
+        font-family: 'Nerko One', cursive;
+        padding: 90px 20px 0;
+        background-color: aquamarine;
+        font-size: 25px;
+    }
+</style>
+<body>
+    <!--Cabecera-->
+<header><h1>Este es el título principal del sitio web</h1></header>
+
+    <!--Barra de navagacion con una lista desordenada-->
+<nav>
+<ul>
+ <li>principal</li>
+ <li>fotos</li>
+ <li>videos</li>
+ <li>contacto</li>
+</ul>
+</nav>
+
+    <!--Información Principal y Barra Lateral-->
+<section>
+    <p>Información Principal y Barra Lateral</p>
+
+    <!--Division por articulos, similar a blockquote pero con caracteristicas parecidas-->
+    <article>
+        Este es el texto de mi primer mensaje
+    </article>
+    <article>
+        Este es el texto de mi segundo mensaje
+    </article> 
+
+    <!--unidades independientes de contenido-->
+    <article>
+        <header>
+            <h1>Titulo del mensaje dos</h1>
+        </header>
+        Este es el texto de mi segundo mensaje
+        <footer>
+            <span>Mi <mark>coche</mark> es rojo</span> 
+        </footer>
+    </article> 
+
+    <!--Grupo de tipografia de titulos-->
+    <article>
+        <header>
+        <hgroup>
+        <h1>Título del mensaje uno</h1>
+        <h2>Subtítulo del mensaje uno</h2>
+        </hgroup>
+        <p>publicado 10-12-2011</p>
+        </header>
+
+        <!--la primera etiqueta declara que es contenido de imagen y la segunda determina el contenido exacto-->
+        <figure>
+            <img src=”http://www.minkbooks.com/images/minkbookslogo.jpg”>
+            <figcaption>
+            Esta es la imagen del primer mensaje
+            </figcaption>
+        </figure>
+
+        <footer>
+
+            <!--Negrilla, importante-->
+        <span>Mark: Equivalente a <mark>b</mark> pero <u>Subraya</u><br></span>
+
+        <!--Cursilla ó enfasis-->
+        <span>Em: Equivalente a <c>i</em>, hace cursiva<br></span>
+        
+        <!--Letra pequeña-->
+        <span>Small: Este hace referencia a letra <b> <small>pequeña</small></b><br></span>
+
+        <!--Cite, encerrar el titulo de un trabajo...-->
+        <span>Cite: Encierra el <cite>titulo</cite> de un trabajo, como un libro, una película, una canción, etc… <br></span>
+        
+        <!--Instertar información de contacto relacionada con el contenido del elemento-->
+        <span>Address: Situaciones en las que debemos presentar información de contacto relacionada con el contenido del elemento <b>article</b> o el cuerpo completo. Este elemento debería ser incluido dentro de <b>footer</b></span>
+        </footer>
+        </article>
+
+
+        <article>
+            <header>
+            <h1>Título del mensaje dos</h1>
+        <!--Time, permite insertar la fecha deseada.-->
+            <time datetime="2011-10-12" pubdate>publicado 12-10-2011</time>
+            </header>
+            Este es el texto del mensaje
+        </article>
+</section>
+
+    <!--Barra Lateral con bloques-->
+<aside>
+    <blockquote>Mensaje número uno</blockquote>
+    <blockquote>Mensaje número dos</blockquote>
+</aside>
+
+    <!--Pie de página-->
+<footer>
+    Derechos Reservados &copy; 2010-2011
+</footer>
+
+</body>
+</html>
