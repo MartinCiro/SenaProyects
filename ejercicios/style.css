@@ -1,0 +1,33 @@
+.two{
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid blue;
+    background-color: aqua;
+    width: 30%;
+    font-style:initial;  
+}
+
+.caixa_outer1{
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid blue;
+}
+
+.caixa_outer2{
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid blue;
+}
+
+.four{
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid rgb(130, 130, 216);
+    width: 30%;
+    font-style:initial; 
+}
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <title>‎Lista de Ejercicios # 1‎ </title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+        <header>
+
+        </header>
+
+        <main>
+            <h3>‎Lista de Ejercicios # 1‎ </h3>
+            <br>
+
+            <p>
+                1) En la carpeta /js, inicie un nuevo archivo de .js y asígnelo el nombre 'ex1.js'. Haga el vínculo a
+                este archivo en la parte inferior de esta página HTML. Envíe el siguiente mensaje por consola: "Este es
+                ex1.js".‎
+            </p>
+
+            <small>‎* Utilice este archivo para resolver el resto de los ejercicios a continuación.‎</small>
+
+            <br><br>
+
+            <p>
+                2) Crea 3 variables para almacenar tu nombre, apellido y año de nacimiento. En el cuadro azul a
+                continuación, coloque el siguiente texto: “Hola, mi nombre es ___________ tengo _____ años y estoy
+                aprendiendo JavaScript”.‎
+            </p>
+            <div class="two">
+
+                <div>
+                    <p>Ingrese su nombre <input type="text" name="texto" placeholder="Nombre" /></p>
+
+                    <p>Ingrese su apellido <input type="text" name="texto" placeholder="Apellido" /></p>
+
+                    <p>Ingrese su año de nacimiento <input type="text" name="texto" placeholder="Año de nacimiento" />
+                    </p>
+
+                    <input type="submit" value="Enviar" onclick="enviarAlerta();">
+
+                    <input type="submit" value="Recargar" onclick="reloa();">
+                </div>
+            </div>
+            <div class="caixa_outer1 blueborder">
+
+                <div id="student_message" onclick="enviarAlerta()">
+                    This element has id="student_message". Show your message here.
+                </div>
+            </div>
+
+            <small>‎* Utilice el año actual para calcular su edad.‎
+            </small>
+
+            <br><br>
+
+            <p>
+                ‎3) Obtener el promedio de los siguientes números.
+
+            </p>
+
+            <div class="caixa_outer inline">
+
+                <div id="num_1">
+                    101
+                </div>
+            </div>
+
+            &#xf7;
+
+            <div class="caixa_outer inline">
+
+                <div id="num_2">
+                    7
+                </div>
+            </div>
+
+            =
+
+            <div class="caixa_outer2 inline">
+
+                <div id="result" onclick="resu()">
+                    ‎Mostrar el resultado con dos posiciones decimales
+                </div>
+            </div>
+
+
+            <br>
+
+            <br>
+
+            <p>
+                4) ‎Supongamos que los números de teléfono con 9 dígitos son válidos. Todos los demás no son válidos.
+                Utilice Javascript para probar si los siguientes números son válidos:‎
+            </p>
+
+            <pre>
+                    <code class="javascript">
+
+    var phone1 = "988866552";
+    var phone2 = "99087612366";
+    var phone3 = 876543123;
+    
+                    </code>
+                </pre>
+            <div class="four">
+                <div id="cu">
+                    <p>Ingrese el numero <input type="text" name="num" placeholder="Numero" /></p>
+
+                    <input type="submit" value="Enviar" onclick="cuat();">
+                </div>
+            </div>
+
+
+
+            <br>
+
+            <p>
+                5) ‎Enviar a la consola el resultado de la siguiente operación: 32‎‎<sup _istranslated="1"
+                    _mstmutation="1">‎6‎</sup> <input type="submit" value="Imprimir consola" onclick="exp();">
+
+            </p>
+
+            <br>
+
+            <p>
+                6) ‎Tenga en cuenta los siguientes nombres de variable e informe cuáles no son válidos y por qué:‎
+
+            
+                <ol type="a" id="lis">
+                <p>a) var NAME;</p> 
+                <p>b) var $num1;</p>
+                <p>c) var typeof; </p>
+                <p>d) var first-name; </p>
+                <p>e) var attempt_2;</p>
+                <p>f) var 2ndAttempt; </p>
+                <p>g) var full name; </p>
+            </ol>
+            <input type="submit" value="Evaluar" onclick="eva();">
+            </p>
+
+            <br>
+
+            <p>
+                7) ‎Considere el bloque de código a continuación y adivine qué valores se mostrarán en la consola.‎
+            </p>
+
+            <pre>
+                    <code class="javascript">
+
+    var quantity = "25";
+    var number = 6;
+    var pressure;
+    var temperature = null;
+
+    console.log(quantity += quantity); //Concatenacion de string
+    console.log( (7+5) / number + 2 ); //Operacion matematica = 4
+    console.log(pressure); //No tiene valor definido 
+    console.log(temperature); // Es nulo
+    console.log(typeof pressure); //Imprimiría indefinido
+    console.log(typeof temperature); //Por qué imprime objeto si es vlr nul?
+
+                    
+                    </code>
+                </pre>
+
+            <br>
+
+            <p>
+                8)‎ Realice las transformaciones en las direcciones URL siguientes:‎
+
+            </p>
+            <div onclick="nose()">
+            <div class="caixa_outer inline">
+                <div id="url_1">
+                    www.sena.edu.co
+
+                </div>
+            </div>
+
+            <div class="caixa_outer inline">
+                <div id="url_2">
+                    show the url with https:// aquí‎
+                </div>
+            </div>
+
+            <br>
+
+            <div class="caixa_outer inline">
+                <div id="url_3">
+                    https://www.google.com
+                </div>
+            </div>
+
+            <div class="caixa_outer inline">
+                <div id="url_4">
+                    show the url without https:// aquí‎
+                </div>
+            </div>
+        </div>
+
+            <div id="bottom-area">
+                <div class="prev-next-link">
+                    <div class="link-aula" id="prev_class">
+
+                    </div>
+                    <div class="link-aula" id="next_class">
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+<script src="ex1.js"></script>
+
+</html>
