@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #animation {
+      width: 100px; /* Ajusta el ancho del contenedor según tus necesidades */
+      height: 1351px; /* Ajusta la altura del contenedor según tus necesidades */
+      background-image: url(sprite.svg); /* Ruta a tu archivo de sprite SVG */
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div id="animation"></div>
+
+  <script>
+    const animation = document.getElementById('animation');
+    const totalFrames = 20; // Total de frames en el sprite (5x4)
+    const frameHeight = 1351; // Altura de cada frame en píxeles
+    let currentFrame = 0; // Frame actual de la animación
+    let animationId = null; // ID de la animación para controlarla posteriormente
+
+    function updateAnimation() {
+      const yPosition = -(currentFrame * frameHeight); // Calcula la posición vertical del frame
+
+      animation.style.backgroundPosition = `0px ${yPosition}px`; // Actualiza la posición del sprite
+
+      currentFrame++; // Avanza al siguiente frame
+
+      // Si se alcanza el último frame, reinicia la animación
+      if (currentFrame >= totalFrames) {
+        currentFrame = 0;
+      }
+    }
+
+    function startAnimation() {
+      animationId = requestAnimationFrame(startAnimation);
+      updateAnimation();
+    }
+
+    function stopAnimation() {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+
+    // Inicia la animación cuando se carga la página
+    startAnimation();
+  </script>
+</body>
+</html>
