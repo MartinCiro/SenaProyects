@@ -1,21 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prueba de animación de sprite PNG</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="../../js/animation.js"></script>
+</head>
 <div class="container">
-    <div class="player">
-      <div class="bar">Barra de vida del jugador</div>
-      <img src="../../acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador">
-      <div class="buttons">
-        <button>Botón 1</button>
-        <button>Botón 2</button>
-        <button>Botón 3</button>
-      </div>
-    </div>
-    
-    <div class="enemi">
-      <div class="bar">Barra de vida del enemigo</div>
-      <img src="../../acces/Enemi/EsperandoAtaqueEnemigo/esperandoAtaqueEnem.gif" alt="Enemigo">
-      <div class="buttons">
-        <button>Botón 1</button>
-        <button>Botón 2</button>
-        <button>Botón 3</button>
-      </div>
+  <div class="player">
+    <div class="bar" id="vida">Barra de vida del jugador</div>
+
+    <img src="../../acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador">
+    <div class="buttons">
+      <button onclick="vdSalJuga(0);">Ataque de gua</button>
+      <button onclick="vdSalJuga(1);">Ataque de Fuego</button>
+      <button onclick="vdSalJuga(2);">Ataque Electrico</button>
     </div>
   </div>
+
+  <div class="enemi">
+    <div class="bar">Barra de vida del enemigo</div>
+    <img src="../../acces/Enemi/EsperandoAtaqueEnemigo/esperandoAtaqueEnem.gif" alt="Enemigo">
+    <div class="buttons">
+      <button onclick="vdEne(0);">Defensa Agua</button>
+      <button onclick="vdEne(1);">Defensa Fuego</button>
+      <button onclick="vdEne(2);">Defensa Electrico</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
