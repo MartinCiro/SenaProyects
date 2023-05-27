@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="936.45593"
+   height="1013.1918"
+   viewBox="0 0 936.45593 1013.1918"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="start.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/ciro/Desktop/david/iconos/1.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1048"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.3535534"
+     inkscape:cx="432.74934"
+     inkscape:cy="738.21946"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-global="false"
+     inkscape:snap-bbox="true" />
+  <defs
+     id="defs1043">
+    <linearGradient
+       id="linearGradient8278"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#9e6f88;stop-opacity:1;"
+         offset="0"
+         id="stop8276" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3146"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#6fa240;stop-opacity:1;"
+         offset="0"
+         id="stop3144" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3114"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3112" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3086"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#b24559;stop-opacity:1;"
+         offset="0"
+         id="stop3084" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(63.662844,173.88232)">
+    <rect
+       style="fill:#9e6f88;stroke-width:8.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="rect943"
+       width="942.38214"
+       height="1021.8265"
+       x="-64.410164"
+       y="-175.74176"
+       rx="7.7781701"
+       ry="5" />
+    <path
+       style="fill:#b2018c;fill-opacity:1;stroke:none;stroke-width:0.999998px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 109.03541,18.661269 c 0,0 -10.935248,-74.19702 28.35642,-63.82931 116.36112,30.70366 615.00438,356.251591 615.00438,356.251591 0,0 61.2124,46.5704 -4.7817,90.16206 -94.8681,62.66394 -536.71888,317.86379 -536.71888,317.86379 0,0 -135.675218,82.95839 -111.377178,-38.1729 C 122.00934,461.61121 123.00185,240.10452 109.03541,18.661269 Z"
+       id="path942"
+       sodipodi:nodetypes="cscsccc" />
+  </g>
+</svg>

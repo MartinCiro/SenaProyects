@@ -1,0 +1,48 @@
+body{
+    background-image: url('../acces/iconos/fondo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px 20%;
+    width: 100%;
+    height: auto;   
+}
+
+/*Alinear start hacia el centro y darle after*/
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura del contenedor al 100% de la ventana */
+  }
+  
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    border: none;
+    background-color: transparent;
+    padding: 350px 0;
+  }
+  
+  .triangle-button {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url("../acces/iconos/start.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .triangle-button:active {
+    transform: scale(1.8);
+  }
+
+  /*Aquí termina la animacion del boton*/
+  
+  
+  
