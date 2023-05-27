@@ -44,5 +44,36 @@ body{
 
   /*Aquí termina la animacion del boton*/
   
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .player,
+  .enemi {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .bar {
+    background-color: #ccc;
+    padding: 5px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
   
   
