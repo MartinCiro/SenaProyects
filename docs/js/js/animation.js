@@ -16,7 +16,7 @@ function page(ru) {
 }
 
 function go() {
-  page('../screen/player/playerAtaq.html');
+  page('screen/player/playerAtaq.html');
 }
 
 var salJuga = 100;
@@ -83,14 +83,14 @@ function vidaEne(AtaJuga) {
 function reem() {
   const existingGif = document.getElementById('pla');
   const newGif = document.createElement('img'); // Crea un contenedor img
-  newGif.src = '../acces/Player/DefensaPlayer/DefPlayer.gif'; //Ruta del reemplazo
+  newGif.src = 'acces/Player/DefensaPlayer/DefPlayer.gif'; //Ruta del reemplazo
   existingGif.innerHTML = '';//Se envia el reemplazo
   existingGif.appendChild(newGif);
   const duration = 3010; // Tiempo en milisegundos (3000 ms = 3 segundos)
 
   //volver al contenido original
   setTimeout(() => {
-    existingGif.innerHTML = '<img src="../../acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador" >';/// Ruta para el contenido original
+    existingGif.innerHTML = '<img src="acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador" >';/// Ruta para el contenido original
   }, duration);
 }
 
