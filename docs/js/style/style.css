@@ -75,5 +75,29 @@ body{
     padding: 5px;
     margin-bottom: 5px;
   }
+
+  /*Contenedor*/
+  .bar-container {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  .bar {
+    background-color: green;
+    transition: width 0.3s ease;
+  }
+  
+  .bar.red {
+    background-color: red;
+  }
+  
+  .bar-content {
+    text-align: center;
+    line-height: 20px;
+    color: white;
+  }
+  
   
   

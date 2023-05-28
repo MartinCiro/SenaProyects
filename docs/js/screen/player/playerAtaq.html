@@ -8,26 +8,36 @@
 </head>
 <div class="container">
   <div class="player">
-    <div class="bar" id="vida">Barra de vida del jugador</div>
-
-    <img src="../../acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador">
+    <div class="bar-container">
+      <div class="bar" id="vida">Barra de vida del enemigo</div>
+    </div>
+    <div id="pla">
+      <img src="../../acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador">
+    </div>
     <div class="buttons">
       <button onclick="vdSalJuga(0);">Ataque de gua</button>
       <button onclick="vdSalJuga(1);">Ataque de Fuego</button>
       <button onclick="vdSalJuga(2);">Ataque Electrico</button>
+      <button onclick="reset('salJuga');">Reiniciar vida</button>
     </div>
   </div>
 
   <div class="enemi">
+    <div class="bar-container">
     <div class="bar">Barra de vida del enemigo</div>
+  </div>
+    <div id="pla">
     <img src="../../acces/Enemi/EsperandoAtaqueEnemigo/esperandoAtaqueEnem.gif" alt="Enemigo">
+  </div>
     <div class="buttons">
-      <button onclick="vdEne(0);">Defensa Agua</button>
-      <button onclick="vdEne(1);">Defensa Fuego</button>
-      <button onclick="vdEne(2);">Defensa Electrico</button>
+      <button onclick="vidaEne(0);">Defensa Agua</button>
+      <button onclick="vidaEne(1);">Defensa Fuego</button>
+      <button onclick="vidaEne(2);">Defensa Electrico</button>
+      <button onclick="reset('salEnemi');">Reiniciar vida</button>
     </div>
   </div>
 </div>
 
 </body>
+
 </html>
