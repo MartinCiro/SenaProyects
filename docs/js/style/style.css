@@ -61,8 +61,8 @@ body{
   }
   
   img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 95%;
   }
   
   .buttons {
@@ -78,7 +78,7 @@ body{
 
   /*Contenedor*/
   .bar-container {
-    width: 200px;
+    width: 95%;
     height: 20px;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -94,8 +94,7 @@ body{
   }
   
   .bar-content {
-    text-align: center;
-    line-height: 20px;
+    line-height: 20PX;
     color: white;
   }
   

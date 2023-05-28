@@ -42,7 +42,7 @@ let vida = 100;
 
 function atacar() {
   // Obtener la barra de vida
-  const barraVida = document.getElementById('vida');
+  const barraVida = document.getElementById('vidaE');
   
   // Reducir el nivel de vida en un valor fijo (por ejemplo, 10)
   salEnemi;
@@ -65,6 +65,7 @@ function atacar() {
 
 //Vida enemigo
 function vidaEne(AtaJuga) {
+  reem();
   EscuEne = (Math.floor(Math.random() * 3))
   console.log(EscuEne)
   console.log(AtaJuga)
@@ -90,13 +91,12 @@ function reem() {
 
   //volver al contenido original
   setTimeout(() => {
-    existingGif.innerHTML = '<img src="acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador" >';/// Ruta para el contenido original
+    existingGif.innerHTML = '<img src="acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif" alt="Jugador" width="100%" >';/// Ruta para el contenido original
   }, duration);
 }
 
 //vida salud Jugador
 function vdSalJuga(EscuJuga) {
-  reem();
   ReV(salJuga);
   AtaEne = (Math.floor(Math.random() * 3));
   //Agua
@@ -113,14 +113,12 @@ function vdSalJuga(EscuJuga) {
 function reset(variable) {
   if (variable === 'salJuga') {
     salJuga = 100;
-    barraVida = document.getElementById('vida');
+    barraVida = document.getElementById('vidaJ');
     barraVida.style.width = `${salJuga}%`;
-    console.log(salJuga)
   } else if (variable === 'salEnemi') {
     salEnemi = 100;
-    barraVida = document.getElementById('vida');
+    barraVida = document.getElementById('vidaE');
     barraVida.style.width = `${salEnemi}%`;
-    console.log(salEnemi)
   }
 }
 
