@@ -1,11 +1,15 @@
-body{
-    background-image: url('../acces/iconos/fondo.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0px 20%;
-    width: 100%;
-    height: auto;   
+#jue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../acces/iconos/imagen.svg");
+  opacity: 0.5;  /* Valor de opacidad: 0.5 (50%) */
+  z-index: -1;
 }
+
 
 /*Alinear start hacia el centro y darle after*/
 .center-container {

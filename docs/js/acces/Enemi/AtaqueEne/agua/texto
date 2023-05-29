@@ -1,0 +1,8 @@
+tm=20
+convert -dispose background -delay 20 *.svg AtaquePlayerElectrico.gif
+
+for file in *.svg; do rsvg-convert -f png -o "${file%.*}.png" "$file"; done && convert -dispose background -delay 10 *.png DefeAguaPlay.gif && mkdir png && mv *.png png/ && mkdir svg && mv *.svg svg
+
+DefFue=10
+35 *.png DefeElectroEnemiBarrera.gif
+15 *.png DefeElectroEnemi.gif

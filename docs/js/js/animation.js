@@ -17,6 +17,9 @@ function page(ru) {
 
 function go() {
   page('screen/player/playerAtaq.html');
+
+
+
 }
 
 var salJuga = 100;
@@ -42,7 +45,7 @@ let vida = 100;
 
 function atacar() {
   // Obtener la barra de vida
-  const barraVida = document.getElementById('vidaE');
+  const barraVida = document.getElementById('vidaJ');
   
   // Reducir el nivel de vida en un valor fijo (por ejemplo, 10)
   salEnemi;
