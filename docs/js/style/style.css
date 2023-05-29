@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
 #jue::before {
   content: "";
   position: absolute;
@@ -9,7 +11,11 @@
   opacity: 0.5;  /* Valor de opacidad: 0.5 (50%) */
   z-index: -1;
 }
-
+#mensajePerdida{
+  font-size: 300%;
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+}
 
 /*Alinear start hacia el centro y darle after*/
 .center-container {
