@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');/*font-family: 'Bungee Spice', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@200&display=swap'); /*font-family: 'Tomorrow', sans-serif;*/
 
 #jue::before {
   content: "";
@@ -11,8 +12,14 @@
   opacity: 0.5;  /* Valor de opacidad: 0.5 (50%) */
   z-index: -1;
 }
-#mensajePerdida{
-  font-size: 300%;
+#mensajePerdida, #ataquePla, #ataqueEne, #mensajePerdidaa{
+  font-size: 200%;
+  font-family: 'Tomorrow', sans-serif;
+  text-align: center;
+  color: goldenrod;
+}
+#mensajePerdida, #mensajePerdidaa{
+  font-size: 250%;
   font-family: 'Bungee Spice', cursive;
   text-align: center;
 }

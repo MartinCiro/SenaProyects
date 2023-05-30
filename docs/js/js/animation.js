@@ -1,9 +1,54 @@
+var salJuga = 100;
+var salEnemi = 100;
+var EscuJuga;
+var EscuEne;
+var AtaJuga;
+var AtaEne;
+
+const ataques = [
+  [10, 20, 0],   // Agua para vidaEne
+  [0, 10, 20],   // Fuego para vidaEne
+  [20, 0, 10]    // Electrico para vidaEne
+];
+
+const ataquesEnemigo = [
+  "El enemigo se ha defendido con agua",
+  "El enemigo se ha defendido con Fuego",
+  "El enemigo se ha defendido con electrico"
+];
+
+const ataquesPlayer = [
+  "El Jugador a decidido atacar con agua",
+  "El Jugador a decidido atacar con Fuego",
+  "El Jugador a decidido atacar con electrico"
+];
+
+const ataJugaGifs = [
+  "acces/Player/AtaquePlayer/Agua/AtaquePlayerAgua.gif",
+  "acces/Player/AtaquePlayer/Fuego/AtaquePlayerFuego.gif",
+  "acces/Player/AtaquePlayer/Electrico/AtaquePlayerElectrico.gif"
+];
+const escuEneGifs = [
+  "acces/Enemi/DefensaEnemigo/Agua/DefeAguaEnemi.gif",
+  "acces/Enemi/DefensaEnemigo/Fuego/DefeFuegoEnemi.gif",
+  "acces/Enemi/DefensaEnemigo/Electrico/DefeElectroEnemi.gif"
+];
+
+const esperandoAtaque = [
+  "acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif",
+  "acces/Enemi/EsperandoAtaqueEnemigo/esperandoAtaqueEnem.gif"
+]
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//Extraer el contenido de la pagina secundaria
 function page(ru) {
   const contentElement = document.getElementById('jue');
 
   // Realizar la solicitud al servidor
-  const xhr = new XMLHttpRequest();
-  console.log(ru)
+  const xhr = new XMLHttpRequest(); //creo una variable xhr desde la libreria xml
   xhr.open('GET', ru, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -16,25 +61,27 @@ function page(ru) {
 }
 
 function go() {
-  page('screen/player/playerAtaq.html');
+  reproducirSonido("acces/sounds/inicio.mp3")
+  sleep(3000).then(() => {
+    page('screen/player/playerAtaq.html');
+  });
 }
 
-var salJuga = 100;
-var salEnemi = 100;
-var EscuJuga;
-var EscuEne;
-var AtaJuga;
-var AtaEne;
-//funcion para reinciar la vida
-//SalEnemi, Ene, acces/Enemi/deadEnemi/1.svg
+//funcion para el sonido
+function reproducirSonido(ubicacionSonido) {
+  var audio = new Audio(ubicacionSonido);
+  audio.play();
+}
+
+//revisa la vida del enemigo y del jugador
 function ReV(vd, iD, reemplazo) {
-  if(vd<=0){
-    var mensajePerdida = document.getElementById('mensajePerdida');
-    reem(`${iD}`, `${reemplazo}`, `${reemplazo}`);
+  if (vd <= 0) {
+    reem(iD, reemplazo, reemplazo)
+    var mensajePerdida = document.getElementById(`${iD}`);
     mensajePerdida.style.display = "block";
+    reproducirSonido("acces/sounds/lose.mp3")
   } else if (vd >= 100) {
     vd = 100;
-    console.log("Se reincia la vida")
   }
 }
 
@@ -51,46 +98,45 @@ function atacar(iD, salu) {
     // Si el nivel de vida es mayor a 0, actualizar la barra de vida con el nuevo nivel
     barraVida.style.width = `${salu}%`;
   }
+
+}
+
+
+function mostrarMensajeAtaque(elementId, mensaje) {
+  const elemento = document.getElementById(elementId);
+  if (elemento) {
+    elemento.innerText = mensaje;
+    elemento.style.display = "block";
+  }
+  if(salEnemi<=0 || salJuga<=0){
+    elemento.innerText = mensaje;
+    elemento.style.display = "none";
+  }
 }
 
 //Vida enemigo
 function vidaEne(AtaJuga) {
-  const ataques = [
-    [10, 20, 0],   // Agua para vidaEne
-    [0, 10, 20],   // Fuego para vidaEne
-    [20, 0, 10]    // Electrico para vidaEne
-  ];
-  const ataJugaGifs = [
-    "acces/Player/AtaquePlayer/Agua/AtaquePlayerAgua.gif",
-    "acces/Player/AtaquePlayer/Fuego/AtaquePlayerFuego.gif",
-    "acces/Player/AtaquePlayer/Electrico/AtaquePlayerElectrico.gif"
-  ];
-  const escuEneGifs = [
-    "acces/Enemi/DefensaEnemigo/Agua/DefeAguaEnemi.gif",
-    "acces/Enemi/DefensaEnemigo/Fuego/DefeFuegoEnemi.gif",
-    "acces/Enemi/DefensaEnemigo/Electrico/DefeElectroEnemi.gif"
-  ];
-  
-  reem("pla", "acces/Player/DefensaPlayer/DefPlayer.gif", "acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif");
-  
+  reproducirSonido('acces/sounds/espada.mp3');
+
   const EscuEne = Math.floor(Math.random() * 3);
-  console.log("El enemigo se defiende con " + EscuEne + " y el jugador ataca con " 
-  + AtaJuga);
-  
+  const mensajDefensaEnemigo = ataquesEnemigo[EscuEne];
+  const mensajeAtaquePlayer = ataquesPlayer[AtaJuga];
+
   if (AtaJuga >= 0 && AtaJuga < ataques.length) {
-    const ataqueJugador = ataques[AtaJuga];
-    const gifJugador = ataJugaGifs[AtaJuga];
-    reem("pla", gifJugador, "acces/Player/EsperandoAtaquePlayer/esperandoAtaquePlayer.gif");
-    console.log(`El jugador ha atacado con ${AtaJuga}`);
+    reem("pla", ataJugaGifs[AtaJuga], esperandoAtaque[0]); //envio el reemplazo
+    mostrarMensajeAtaque("ataqueEne", mensajDefensaEnemigo);
+    mostrarMensajeAtaque("ataquePla", mensajeAtaquePlayer);
   }
-  
+
   if (EscuEne >= 0 && EscuEne < escuEneGifs.length) {
     const gifEnemigo = escuEneGifs[EscuEne];
-    reem("Ene", gifEnemigo, "acces/Enemi/EsperandoAtaqueEnemigo/esperandoAtaqueEnem.gif");
-    console.log(`El enemigo se ha defendido con ${EscuEne}`);
+    reem("Ene", gifEnemigo, esperandoAtaque[1]);
+    mostrarMensajeAtaque("ataqueEne", mensajDefensaEnemigo);
+    mostrarMensajeAtaque("ataquePla", mensajeAtaquePlayer);
   }
   salEnemi -= ataques[EscuEne][AtaJuga];
-  ReV(salEnemi,"Ene","acces/Enemi/deadEnemi/1.svg");
+  ReV(salEnemi, "Ene", "acces/Enemi/deadEnemi/1.svg");
+  ReV(salJuga, "pla", "acces/Player/DeadPlayer/1.svg");
   atacar("vidaE", salEnemi)
 }
 
@@ -112,28 +158,66 @@ function reem(iD, reemplazo, rutActu) {
 
 //vida salud Jugador
 function vdSalJuga(EscuJuga) {
-  ReV(salJuga);
   AtaEne = (Math.floor(Math.random() * 3));
+  atacar("vidaJ", salJuga)
+  reproducirSonido('acces/sounds/Escudo.mp3');
   //Agua
   if (EscuJuga == AtaEne) {
     salJuga -= 10;
-    //return has sido atacado con agua
   } else if (EscuJuga < AtaEne) {
     salJuga -= 20;
   } else {
     salJuga -= 0;
   }
+
+  //reemplazar rutas por un arreglo con las rutas, de igual forma mostrar el mensaje con la funcion de mostrar mensaje
+  if(EscuJuga==0 && AtaEne==0){
+    reem("pla", "acces/Player/DefensaPlayer/Agua/DefeAguaPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/agua/AtaqueEnemiAgua.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==0 && AtaEne==1){
+    reem("pla", "acces/Player/DefensaPlayer/Agua/DefeAguaPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Fuego/AtaqueEnemiFuego.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==0 && AtaEne==2){
+    reem("pla", "acces/Player/DefensaPlayer/Agua/DefeAguaPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Electrico/AtaqueEnemiElectrico.gif", esperandoAtaque[1]);
+
+  }else if(EscuJuga==1 && AtaEne==0){
+    reem("pla", "acces/Player/DefensaPlayer/Fuego/DefeFuegoPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/agua/AtaqueEnemiAgua.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==1 && AtaEne==1){
+    reem("pla", "acces/Player/DefensaPlayer/Fuego/DefeFuegoPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Fuego/AtaqueEnemiFuego.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==1 && AtaEne==2){
+    reem("pla", "acces/Player/DefensaPlayer/Fuego/DefeFuegoPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Electrico/AtaqueEnemiElectrico.gif", esperandoAtaque[1]);
+
+  }else if(EscuJuga==2 && AtaEne==0){
+    reem("pla", "acces/Player/DefensaPlayer/Electrico/DefeElectroPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/agua/AtaqueEnemiAgua.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==2 && AtaEne==1){
+    reem("pla", "acces/Player/DefensaPlayer/Electrico/DefeElectroPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Fuego/AtaqueEnemiFuego.gif", esperandoAtaque[1]);
+  }else if(EscuJuga==2 && AtaEne==2){
+    reem("pla", "acces/Player/DefensaPlayer/Electrico/DefeElectroPlay.gif", esperandoAtaque[0]);
+    reem("Ene", "acces/Enemi/AtaqueEne/Electrico/AtaqueEnemiElectrico.gif", esperandoAtaque[1]);
+  }
 }
 
 function reset(variable) {
   if (variable === 'salJuga') {
+    reem("pla", esperandoAtaque[0], esperandoAtaque[0]);
     salJuga = 100;
     barraVida = document.getElementById('vidaJ');
     barraVida.style.width = `${salJuga}%`;
+    barraVida.classList.add('green');
+    mensajePerdida.style.display = "none";
   } else if (variable === 'salEnemi') {
+    reem("Ene", esperandoAtaque[1], esperandoAtaque[1]);
     salEnemi = 100;
     barraVida = document.getElementById('vidaE');
     barraVida.style.width = `${salEnemi}%`;
+    barraVida.classList.add('green');
+    mensajePerdida.style.display = "none";
   }
 }
 
