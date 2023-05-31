@@ -15,10 +15,43 @@
     </div>
   </div>
   <!--Agua * Agua = 10 || Agua * Fuego = 20 || Agua * Rayo = 0 |||| Ataques enemigos aleatorios-->
+  
+  <!-- <button onclick="vidaEne(0);">Ataque de Agua</button>
+  <button onclick="vidaEne(1);">Ataque de Fuego</button>
+  <button onclick="vidaEne(2);">Ataque Electrico</button>
+  <button onclick="vidaPla(0);">Defensa de Agua</button>
+  <button onclick="vidaPla(1);">Defensa de Fuego</button>
+  <button onclick="vidaPla(2);">Defensa Electrico</button> -->
+  
 
 </body>
-<script>
-  
-</script>
+<!-- <script>
+  var saEne = 100;
+  var saPla = 100;
+  var ataEne;
+  var defEne;
+  var defPla;
+
+  const ataques = [
+    [10, 20, 0],  // Agua para vidaEne
+    [0, 10, 20], // Fuego para vidaEne
+    [20, 0, 10] // Electrico para vidaEne
+  ];
+
+  function vidaEne(ataPla) {
+    defEne = (Math.floor(Math.random() * 3));
+    console.log(`Defensa enemigo: ${defEne}\nDefensa jugador: ${ataPla}`);
+    saEne -= ataques[defEne][ataPla];
+    console.log(`Esta es la salud del enemigo: ${saEne}`);
+  }
+  function vidaPla(defPla){
+    ataEne = (Math.floor(Math.random() * 3));
+    console.log(`Ataque enemigo: ${ataEne}\nDefensa jugador: ${defPla}`);
+    saPla -= ataques[ataEne][defPla];
+    console.log(`La salud del jugador es: ${saPla}`)
+  }
+
+
+</script> -->
 
 </html>
