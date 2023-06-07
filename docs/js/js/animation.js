@@ -152,6 +152,8 @@ function reem(iD, reemplazo, rutActu) {
 function go() {
   reproducirSonido("acces/sounds/inicio.mp3")
   sleep(4000).then(() => {
+    var d = document.getElementById("ft");
+    d.style.display="none";
     page('screen/page2.html');    
     setTimeout(verificarVidaJugador, 0);
   });
