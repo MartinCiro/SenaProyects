@@ -86,21 +86,44 @@ function page(ru) {
   };
   xhr.send();
 }
-function ocuBtn(){
-  const btnBlock = document.getElementById("btn");
-  const btnBlock1 = document.getElementById("btn1");
-  btnBlock.style.display = 'none';
-  btnBlock1.style.display = 'none';
+function ocuBtn(contenedorId, mode) {
+  var contenedor = document.getElementById(contenedorId);
+  var botones = contenedor.getElementsByTagName('button');
+
+
+  for (var i = 0; i < botones.length; i++) {
+    if (mode == "enabled") {
+      botones[i].disabled = false;
+    } else {
+      botones[i].disabled = true;
+    }
+  }
 }
-function mosBtn(){
+function mosBtn() {
+  1
   const btnBlock = document.getElementById("btn");
   const btnBlock1 = document.getElementById("btn1");
   btnBlock.style.display = 'block';
   btnBlock1.style.display = 'block';
 }
 
+function verificarVidaJugador() {
+  // Obtener el elemento de la barra de vida del jugador
+  var vidaJugadorBarra = document.getElementById("vidaJ");
+  var vidaJugadorBarra1 = document.getElementById("vidaE");
+
+  // Verificar la vida actual del jugador (puedes modificar esta lógica según tus necesidades)
+  var vidaActualJugador = salJuga;
+  var vidaActualJugador2 = salEnemi;
+  vidaJugadorBarra.style.width = vidaActualJugador + "%";
+  vidaJugadorBarra1.style.width = vidaActualJugador2 + "%";
+  if (vidaActualJugador <= 0) {
+    ocuBtn("btn1");
+  } else if (vidaActualJugador2 <= 0) {
+    ocuBtn("btn");
+  }
+}
 function reem(iD, reemplazo, rutActu) {
-  ocuBtn()
   const existingGif = document.getElementById(`${iD}`);
   const newGif = document.createElement('img'); // Crea un contenedor img
   newGif.src = `${reemplazo}`; //Ruta del reemplazo
@@ -114,18 +137,19 @@ function reem(iD, reemplazo, rutActu) {
   //volver al contenido original
   setTimeout(() => {
     existingGif.innerHTML = "<img src='" + rutActu + "' alt='Jugador' width='100%' >";
-    mosBtn()
+    ocuBtn("btn","enabled");
+    ocuBtn("btn1","enabled");
     existingGif.style.width = ''; // Elimina el tamaño de ancho personalizado
     existingGif.style.height = '';
   }, duration);
-  
+
 }
 
 
 
 function go() {
-  reproducirSonido("acces/sounds/inicio.mp3")
-  sleep(3000).then(() => {
+  //reproducirSonido("acces/sounds/inicio.mp3")
+  sleep(0000).then(() => {
     page('screen/player/playerAtaq.html');
     setTimeout(verificarVidaJugador, 0);
   });
@@ -143,7 +167,7 @@ function mostrarMensajeAtaque(elementId, mensaje) {
     elemento.innerText = mensaje;
     elemento.style.display = "block";
   }
-  if(salEnemi<=0 || salJuga<=0){
+  if (salEnemi <= 0 || salJuga <= 0) {
     elemento.innerText = mensaje;
     elemento.style.display = "none";
   }
@@ -159,9 +183,9 @@ function actualizarPersonaje(iD, msjPerdida, vida, divImg, rutaReem) {
   // Verificar si se ha perdido
   if (vida <= 0) {
     vida = 0;
+    verificarVidaJugador();
     barraVida.style.width = '0%';
     barraVida.classList.add('red');
-    ocuBtn()
     //id, reemplazo, rutaActual
     reem(`${divImg}`, rutaReem, rutaReem);
     mensajePerdida.style.display = 'block';
@@ -173,13 +197,12 @@ function actualizarPersonaje(iD, msjPerdida, vida, divImg, rutaReem) {
 }
 //Vida enemigo
 function vidaEne(AtaJuga) {
-  
   reproducirSonido('acces/sounds/espada.mp3');
   EscuEne = Math.floor(Math.random() * 3);
   const mensajeAtaquePlayer = ataquesPlayer[AtaJuga];
 
-  salEnemi -= ataques[EscuEne][AtaJuga];
-  
+  salEnemi -= ataques[AtaJuga][EscuEne];
+
   console.log(`La vida del enemigo es: ${salEnemi} y la del jugador es: ${salJuga}`);
 
   if (AtaJuga >= 0 && AtaJuga < ataquesPlayer.length) {
@@ -200,7 +223,8 @@ function vidaEne(AtaJuga) {
   }
   actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
   actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
-  verificarVidaJugador()
+  verificarVidaJugador();
+  cambiarTurno();
 }
 
 
@@ -212,13 +236,13 @@ function vidaEne(AtaJuga) {
 function vdSalJuga(EscuJuga) {
 
   AtaEne = Math.floor(Math.random() * 3);
-  salJuga -= ataques[EscuJuga][AtaEne];   
+  salJuga -= ataques[AtaEne][EscuJuga];
   console.log(salJuga)
   reproducirSonido('acces/sounds/Escudo.mp3');
 
   const reemParams = [
-    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne]},
-    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne]},
+    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne] },
+    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne] },
   ];
 
   for (const params of reemParams) {
@@ -230,10 +254,11 @@ function vdSalJuga(EscuJuga) {
     actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
   }
   // Se intercambia EscuJuga y AtaEne
-  
+
   actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
   actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
   verificarVidaJugador()
+  cambiarTurno();
 }
 
 
@@ -247,6 +272,7 @@ function reset(variable) {
     barraVida.style.width = `${salJuga}%`;
     barraVida.classList.add('green');
     mensajePerdida.style.display = "none";
+    mosBtn();
   } else if (variable === 'salEnemi') {
     reem("Ene", esperandoAtaque[1], esperandoAtaque[1]);
     salEnemi = 100;
@@ -254,19 +280,18 @@ function reset(variable) {
     barraVida.style.width = `${salEnemi}%`;
     barraVida.classList.add('green');
     mensajePerdida.style.display = "none";
+    mosBtn();
   }
 }
-function verificarVidaJugador() {
-  // Obtener el elemento de la barra de vida del jugador
-  var vidaJugadorBarra = document.getElementById("vidaJ");
-  var vidaJugadorBarra1 = document.getElementById("vidaE");
 
-  // Verificar la vida actual del jugador (puedes modificar esta lógica según tus necesidades)
-  var vidaActualJugador = salJuga;
-  var vidaActualJugador2 = salEnemi;
-  vidaJugadorBarra.style.width = vidaActualJugador + "%";
-  vidaJugadorBarra1.style.width = vidaActualJugador2 + "%";
-  if(vidaActualJugador<=0 || vidaActualJugador2<=0){
-    ocuBtn()
+
+var jugadorActual = 0;
+
+function cambiarTurno() {
+  if (jugadorActual === 0) {
+    jugadorActual = 1;
+    ocuBtn("btn1","disabled");
+  } else {
+    ocuBtn("btn","disabled");
   }
 }
