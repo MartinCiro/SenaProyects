@@ -118,11 +118,13 @@ function verificarVidaJugador() {
   vidaJugadorBarra.style.width = vidaActualJugador + "%";
   vidaJugadorBarra1.style.width = vidaActualJugador2 + "%";
   if (vidaActualJugador <= 0) {
-    ocuBtn("btn1");
+    ocuBtn("btn1", "disabled");
   } else if (vidaActualJugador2 <= 0) {
-    ocuBtn("btn");
+    ocuBtn("btn"), "disabled";
   }
 }
+
+//llamar al reem en el inicio, pasando como atriburo el ataque del enemigo y la defensa del jugador de forma automatica
 function reem(iD, reemplazo, rutActu) {
   const existingGif = document.getElementById(`${iD}`);
   const newGif = document.createElement('img'); // Crea un contenedor img
@@ -148,9 +150,9 @@ function reem(iD, reemplazo, rutActu) {
 
 
 function go() {
-  //reproducirSonido("acces/sounds/inicio.mp3")
-  sleep(0000).then(() => {
-    page('screen/player/playerAtaq.html');
+  reproducirSonido("acces/sounds/inicio.mp3")
+  sleep(4000).then(() => {
+    page('screen/page2.html');    
     setTimeout(verificarVidaJugador, 0);
   });
 }
@@ -293,5 +295,6 @@ function cambiarTurno() {
     ocuBtn("btn1","disabled");
   } else {
     ocuBtn("btn","disabled");
+    jugadorActual = 0;
   }
 }
