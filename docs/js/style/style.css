@@ -1,24 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');/*font-family: 'Bungee Spice', cursive;*/
-@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@200&display=swap'); /*font-family: 'Tomorrow', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+/*font-family: 'Bungee Spice', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@200&display=swap');
+/*font-family: 'Tomorrow', sans-serif;*/
 
-#jue::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../acces/iconos/imagen.svg");
-  opacity: 0.5;  /* Valor de opacidad: 0.5 (50%) */
-  z-index: -1;
+#ft {
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+  background-image: linear-gradient(to right, black, rgb(46, 31, 31));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-#mensajePerdida, #ataquePla, #ataqueEne, #mensajePerdidaa{
+
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden;
+  background-image: url("../acces/iconos/imagen.svg");
+  content: "";
+}
+
+#mensajePerdida,
+#ataquePla,
+#ataqueEne,
+#mensajePerdidaa {
   font-size: 200%;
   font-family: 'Tomorrow', sans-serif;
   text-align: center;
-  color: goldenrod;
+  color: rgb(199, 31, 199);
 }
-#mensajePerdida, #mensajePerdidaa{
+
+#mensajePerdida,
+#mensajePerdidaa {
   font-size: 250%;
   font-family: 'Bungee Spice', cursive;
   text-align: center;
@@ -26,94 +42,83 @@
 
 /*Alinear start hacia el centro y darle after*/
 .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh; /* Ajusta la altura del contenedor al 100% de la ventana */
-  }
-  
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    opacity: 0;
-    border: none;
-    background-color: transparent;
-    padding: 350px 0;
-  }
-  
-  .triangle-button {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background-image: url("../acces/iconos/start.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .triangle-button:active {
-    transform: scale(1.8);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  /* Ajusta la altura del contenedor al 100% de la ventana */
+}
 
-  /*Aquí termina la animacion del boton*/
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .player,
-  .enemi {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .bar {
-    background-color: #ccc;
-    padding: 5px;
-  }
-  
-  img {
-    width: 80%;
-    height: 95%;
-  }
-  
-  .buttons {
-    margin-top: 10px;
-  }
-  
-  button {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 5px;
-  }
 
-  /*Contenedor*/
-  .bar-container {
-    width: 95%;
-    height: 20px;
-    border: 1px solid #ccc;
-    overflow: hidden;
-  }
-  
-  .bar {
-    background-color: green;
-    transition: width 0.3s ease;
-  }
-  
-  .bar.red {
-    background-color: red;
-  }
-  
-  .bar-content {
-    line-height: 20PX;
-    color: white;
-  }
-  
-  
-  
+.triangle-button {
+  width: 90px;
+  height: 50px;
+  background-size: cover;
+  cursor: pointer;
+  font-size: 25px;
+  border: 1px solid #7453fa;
+  border-radius: 15px;
+  box-shadow: 0 2px 0px #7453fa;
+  letter-spacing: 1px;
+}
+
+/*Aquí termina la animacion del boton*/
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player,
+.enemi {
+  flex: 1;
+  text-align: center;
+}
+
+.bar {
+  background-color: #ccc;
+  padding: 5px;
+}
+
+img {
+  width: 80%;
+  height: 95%;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+/*Contenedor*/
+.bar-container {
+  width: 95%;
+  height: 20px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.bar {
+  background-color: green;
+  transition: width 0.3s ease;
+}
+
+.bar.red {
+  background-color: red;
+}
+
+.bar-content {
+  line-height: 20PX;
+  color: white;
+}
+#btn1{
+  align-items: ce;
+  margin: 24px;
+  display: flex;
+  width: 30vw;
+  height: 10vh;
+  justify-content: space-between;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 5px;
+  margin-bottom: 5px;
+}
