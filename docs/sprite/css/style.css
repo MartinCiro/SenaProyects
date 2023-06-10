@@ -1,0 +1,22 @@
+.sprite-container {
+    width: 100px;
+    height: 100px;
+}
+
+.sprite {
+    width: 75vw;
+    height: 40vh;
+    background-image: url("../acces/sprite.png");
+    animation: animateSprite 8s steps(5) infinite;
+    background-size: 700px;
+    cursor: pointer;
+}
+
+@keyframes animateSprite {
+    0%{
+        background-position-x: -5px;
+    }
+    100%{
+        background-position-x: -1000px;
+    }
+}
