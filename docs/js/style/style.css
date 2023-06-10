@@ -85,10 +85,6 @@ img {
   height: 95%;
 }
 
-.buttons {
-  margin-top: 10px;
-}
-
 /*Contenedor*/
 .bar-container {
   width: 95%;
@@ -111,14 +107,19 @@ img {
   color: white;
 }
 #btn1{
-  align-items: ce;
-  margin: 24px;
+  display: flex;
+  width: 100vw;
+  height: 15vh;
+  justify-content: center;
+}
+#btnAta{
   display: flex;
   width: 30vw;
-  height: 10vh;
-  justify-content: space-between;
-  border-radius: 15px;
-  background-color: transparent;
-  padding: 5px;
-  margin-bottom: 5px;
+  height: 15vh;
+  justify-content: center;
+  border-radius: 35px;
+  background-color: rgb(89, 3, 100);
+  padding: 15px;
+  width: fit-content;
+  margin-right: 10px; /* Añade margen derecho de 10px */
 }
