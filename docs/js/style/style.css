@@ -21,19 +21,17 @@ body {
   background-image: url("../acces/iconos/imagen.svg");
 }
 
-#mensajePerdida,
-#ataqu,
-#mensajePerdidaa {
-  font-size: 200%;
-  text-align: center;
-  color: rgb(255, 215, 215);
-}
-
-#mensajePerdida,
-#mensajePerdidaa {
+#mensajePerdida{
   font-size: 250%;
   font-family: 'Bungee Spice', cursive;
   text-align: center;
+}
+
+#ataqu {
+  font-size: 200%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: rgba(236, 244, 252, 0.603);
 }
 
 /*Alinear start hacia el centro y darle after*/
@@ -110,7 +108,6 @@ img {
 #btnAta{
   margin-top: 60px;
   display: flex;
-  width: 30vw;
   height: 15vh;
   border-radius: 35px;
   background-color: rgb(89, 3, 100);

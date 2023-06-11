@@ -162,7 +162,7 @@ function reem(iD, reemplazo, rutActu) {
 //funcion del boton start y ocultar los creditos
 function go() {
   //reproducirSonido("acces/sounds/inicio.mp3")
-  sleep(10).then(() => {
+  sleep(5000).then(() => {
     var d = document.getElementById("ft");
     d.style.display = "none";
     page('screen/page2.html');
@@ -216,10 +216,10 @@ function vdSalJuga(EscuJuga) {
 
   salJuga -= ataques[AtaEne][EscuJuga];
 
-  mostrarMensajeAtaque(mensajeAtaqueEnemi, defensaPlayer[EscuJuga], ataques[EscuJuga][AtaEne]);
-
   reem("pla", escuPlaGifs[EscuJuga], esperandoAtaque[0]);
   reem("Ene", ataEneGifs[AtaEne], esperandoAtaque[1]);
+
+  mostrarMensajeAtaque(mensajeAtaqueEnemi, defensaPlayer[EscuJuga], ataques[AtaEne][EscuJuga]);
 
   actualizarPersonaje()
   verificarVidaJugador()
@@ -264,7 +264,6 @@ function actualizarPersonaje() {
 
 //funcion para cambiar el turno
 function cambiarTurno() {
-  console.log(jugadorActual);
   if (jugadorActual === 0) {
     reemBtn("acces/iconos/AtaqueAgua.svg", "Ataque de Agua", `vidaEne(0)`);
     reemBtn("acces/iconos/AtaqueFuego.svg", "Ataque de Fuego", "vidaEne(1)");
