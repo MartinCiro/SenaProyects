@@ -6,9 +6,8 @@
 #ft {
   font-family: 'Bungee Spice', cursive;
   text-align: center;
-  background-image: linear-gradient(to right, black, rgb(46, 31, 31));
+  background-color: #7453fa;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 body {
@@ -20,17 +19,14 @@ body {
   background-position: center;
   overflow: hidden;
   background-image: url("../acces/iconos/imagen.svg");
-  content: "";
 }
 
 #mensajePerdida,
-#ataquePla,
-#ataqueEne,
+#ataqu,
 #mensajePerdidaa {
   font-size: 200%;
-  font-family: 'Tomorrow', sans-serif;
   text-align: center;
-  color: rgb(199, 31, 199);
+  color: rgb(255, 215, 215);
 }
 
 #mensajePerdida,
@@ -45,7 +41,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 80vh;
   /* Ajusta la altura del contenedor al 100% de la ventana */
 }
 
@@ -81,8 +77,8 @@ body {
 }
 
 img {
-  width: 80%;
-  height: 95%;
+  width: 70%;
+  height: 85%;
 }
 
 /*Contenedor*/
@@ -107,16 +103,15 @@ img {
   color: white;
 }
 #btn1{
+  margin-top: 20px;
   display: flex;
-  width: 100vw;
-  height: 15vh;
   justify-content: center;
 }
 #btnAta{
+  margin-top: 60px;
   display: flex;
   width: 30vw;
   height: 15vh;
-  justify-content: center;
   border-radius: 35px;
   background-color: rgb(89, 3, 100);
   padding: 15px;

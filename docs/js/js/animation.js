@@ -1,9 +1,34 @@
+
+//funcion para reemplazar los botones
+function reemBtn(reemplazo, mode, fun) {
+  const existingGif = document.getElementById("btn1");
+
+  // Eliminar el elemento hijo existente, si lo hay
+  if (existingGif.firstChild) {
+    existingGif.removeChild(existingGif.firstChild);
+  }
+
+  const newGif = document.createElement('img');
+  newGif.src = reemplazo;
+  newGif.alt = mode;
+  newGif.style.cursor = 'pointer';
+  newGif.id = "btnAta";
+
+  // Agregar evento de clic utilizando addEventListener()
+  newGif.addEventListener('click', function () {
+    eval(fun); // Ejecutar la función pasada como argumento
+  });
+  existingGif.appendChild(newGif);
+}
+
+
 var salJuga = 100;
 var salEnemi = 100;
 var EscuJuga;
-var EscuEne;
+var EscuEne = Math.floor(Math.random() * 3);
 var AtaJuga;
 var AtaEne;
+var jugadorActual = 1;
 
 const ataques = [
   [10, 20, 0],   // Agua para vidaEne
@@ -11,30 +36,32 @@ const ataques = [
   [20, 0, 10]    // Electrico para vidaEne
 ];
 
+//Messages
 const defensaEnemigo = [
-  "El enemigo se ha defendido con agua",
-  "El enemigo se ha defendido con Fuego",
-  "El enemigo se ha defendido con electrico"
+  " el enemigo se ha defendido con escudo de agua, le has quitado ",
+  " el enemigo se ha defendido con escudo de Fuego, le has quitado ",
+  " el enemigo se ha defendido con escudo electrico, le has quitado "
 ];
 
 const ataquesPlayer = [
-  "El Jugador a decidido atacar con agua",
-  "El Jugador a decidido atacar con Fuego",
-  "El Jugador a decidido atacar con electrico"
+  "Has atacado con ataque de agua,",
+  "Has atacado con ataque de Fuego,",
+  "Has atacado con ataque electrico,"
 ];
 
 const ataquesEnemigo = [
-  "El enemigo ha atacado con agua",
-  "El enemigo ha atacado con Fuego",
-  "El enemigo ha atacado con electrico"
+  "El enemigo te ha atacado con ataque de agua",
+  "El enemigo te ha atacado con ataque de Fuego",
+  "El enemigo te ha atacado con ataque electrico"
 ];
 
 const defensaPlayer = [
-  "El Jugador se ha defendido con agua",
-  "El Jugador se ha defendido con Fuego",
-  "El Jugador se ha defendido con electrico"
+  " te has defendido con escudo de agua te ha quitado ",
+  " te has defendido con escudo de Fuego te ha quitado ",
+  " te has defendido con escudo electrico te ha quitado "
 ];
 
+//rutas
 const ataJugaGifs = [
   "acces/Player/AtaquePlayer/Agua/AtaquePlayerAgua.gif",
   "acces/Player/AtaquePlayer/Fuego/AtaquePlayerFuego.gif",
@@ -70,7 +97,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-//Extraer el contenido de la pagina secundaria
+//funcion para atraer el contenido de la siguiente pagina
 function page(ru) {
   const contentElement = document.getElementById('jue');
 
@@ -86,27 +113,8 @@ function page(ru) {
   };
   xhr.send();
 }
-function ocuBtn(contenedorId, mode) {
-  var contenedor = document.getElementById(contenedorId);
-  var botones = contenedor.getElementsByTagName('button');
 
-
-  for (var i = 0; i < botones.length; i++) {
-    if (mode == "enabled") {
-      botones[i].disabled = false;
-    } else {
-      botones[i].disabled = true;
-    }
-  }
-}
-function mosBtn() {
-  1
-  const btnBlock = document.getElementById("btn");
-  const btnBlock1 = document.getElementById("btn1");
-  btnBlock.style.display = 'block';
-  btnBlock1.style.display = 'block';
-}
-
+//funcion para verificar la vida del jugador
 function verificarVidaJugador() {
   // Obtener el elemento de la barra de vida del jugador
   var vidaJugadorBarra = document.getElementById("vidaJ");
@@ -117,14 +125,19 @@ function verificarVidaJugador() {
   var vidaActualJugador2 = salEnemi;
   vidaJugadorBarra.style.width = vidaActualJugador + "%";
   vidaJugadorBarra1.style.width = vidaActualJugador2 + "%";
-  if (vidaActualJugador <= 0) {
-    ocuBtn("btn1", "disabled");
-  } else if (vidaActualJugador2 <= 0) {
-    ocuBtn("btn"), "disabled";
-  }
 }
 
-//llamar al reem en el inicio, pasando como atriburo el ataque del enemigo y la defensa del jugador de forma automatica
+//funcion para mostrar quien ganó y volver a la pagina de inicio
+function ocuBtn() {
+  const duration = 15000; //cantidad de segundos
+  const boton = document.getElementById("btn1");
+  boton.style.display = "none";
+  setTimeout(() => {
+    window.location.reload();
+  }, duration)
+}
+
+//funcion para reemplazar el contenido de las tarjetas
 function reem(iD, reemplazo, rutActu) {
   const existingGif = document.getElementById(`${iD}`);
   const newGif = document.createElement('img'); // Crea un contenedor img
@@ -138,9 +151,7 @@ function reem(iD, reemplazo, rutActu) {
   const duration = 5000; // Tiempo en milisegundos (3000 ms = 3 segundos)
   //volver al contenido original
   setTimeout(() => {
-    existingGif.innerHTML = "<img src='" + rutActu + "' alt='Jugador' width='100%' >";
-    ocuBtn("btn","enabled");
-    ocuBtn("btn1","enabled");
+    existingGif.innerHTML = "<img src='" + rutActu + "' alt='Jugador'>";
     existingGif.style.width = ''; // Elimina el tamaño de ancho personalizado
     existingGif.style.height = '';
   }, duration);
@@ -148,13 +159,13 @@ function reem(iD, reemplazo, rutActu) {
 }
 
 
-
+//funcion del boton start y ocultar los creditos
 function go() {
   //reproducirSonido("acces/sounds/inicio.mp3")
-  sleep(0000).then(() => {
+  sleep(10).then(() => {
     var d = document.getElementById("ft");
-    d.style.display="none";
-    page('screen/page2.html');    
+    d.style.display = "none";
+    page('screen/page2.html');
     setTimeout(verificarVidaJugador, 0);
   });
 }
@@ -165,10 +176,11 @@ function reproducirSonido(ubicacionSonido) {
   audio.play();
 }
 
-function mostrarMensajeAtaque(elementId, mensaje) {
-  const elemento = document.getElementById(elementId);
+//funcion para mostrar el mensaje de ataque
+function mostrarMensajeAtaque(ata, mensaje, cantidad) {
+  const elemento = document.getElementById("ataqu");
   if (elemento) {
-    elemento.innerText = mensaje;
+    elemento.innerText = ata + mensaje + cantidad + " de vida";
     elemento.style.display = "block";
   }
   if (salEnemi <= 0 || salJuga <= 0) {
@@ -176,29 +188,8 @@ function mostrarMensajeAtaque(elementId, mensaje) {
     elemento.style.display = "none";
   }
 }
-//actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
-function actualizarPersonaje(iD, msjPerdida, vida, divImg, rutaReem) {
-  const barraVida = document.getElementById(`${iD}`);
-  const mensajePerdida = document.getElementById(`${msjPerdida}`);
 
-  // Actualizar barra de vida
-  barraVida.style.width = vida;
 
-  // Verificar si se ha perdido
-  if (vida <= 0) {
-    vida = 0;
-    verificarVidaJugador();
-    barraVida.style.width = '0%';
-    barraVida.classList.add('red');
-    //id, reemplazo, rutaActual
-    reem(`${divImg}`, rutaReem, rutaReem);
-    mensajePerdida.style.display = 'block';
-    reproducirSonido("acces/sounds/lose.mp3");
-
-  } else if (vida >= 100) {
-    vida = 100;
-  }
-}
 //Vida enemigo
 function vidaEne(AtaJuga) {
   reproducirSonido('acces/sounds/espada.mp3');
@@ -207,96 +198,86 @@ function vidaEne(AtaJuga) {
 
   salEnemi -= ataques[AtaJuga][EscuEne];
 
-  console.log(`La vida del enemigo es: ${salEnemi} y la del jugador es: ${salJuga}`);
+  reem("pla", ataJugaGifs[AtaJuga], esperandoAtaque[0]);
+  reem("Ene", escuEneGifs[EscuEne], esperandoAtaque[1]);
 
-  if (AtaJuga >= 0 && AtaJuga < ataquesPlayer.length) {
-    reem("pla", ataJugaGifs[AtaJuga], esperandoAtaque[0]);
-    reem("Ene", escuEneGifs[EscuEne], esperandoAtaque[1]);
-    mostrarMensajeAtaque("ataquePla", mensajeAtaquePlayer);
-    mostrarMensajeAtaque("ataqueEne", defensaEnemigo[EscuEne])
-    actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
-    actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
-  }
-  if (EscuEne >= 0 && EscuEne < ataquesEnemigo.length) {
-    reem("pla", ataJugaGifs[AtaJuga], esperandoAtaque[0]);
-    reem("Ene", escuEneGifs[EscuEne], esperandoAtaque[1]);
-    mostrarMensajeAtaque("ataquePla", mensajeAtaquePlayer);
-    mostrarMensajeAtaque("ataqueEne", defensaEnemigo[EscuEne])
-    actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
-    actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
-  }
-  actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
-  actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
+  mostrarMensajeAtaque(mensajeAtaquePlayer, defensaEnemigo[EscuEne], ataques[AtaJuga][EscuEne]);
+
+  actualizarPersonaje()
   verificarVidaJugador();
   cambiarTurno();
 }
 
-
-//funcion para reemplazar el contenido de los div
-
-
-//!!!
 //vida salud Jugador
 function vdSalJuga(EscuJuga) {
-
-  AtaEne = Math.floor(Math.random() * 3);
-  salJuga -= ataques[AtaEne][EscuJuga];
-  console.log(salJuga)
   reproducirSonido('acces/sounds/Escudo.mp3');
+  AtaEne = Math.floor(Math.random() * 3);
+  const mensajeAtaqueEnemi = ataquesEnemigo[AtaEne];
 
-  const reemParams = [
-    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne] },
-    { rPlayer: defensaPlayer[EscuJuga], rEnemi: ataquesEnemigo[AtaEne] },
-  ];
+  salJuga -= ataques[AtaEne][EscuJuga];
 
-  for (const params of reemParams) {
-    reem("pla", escuPlaGifs[EscuJuga], esperandoAtaque[0]);
-    reem("Ene", ataEneGifs[AtaEne], esperandoAtaque[1]);
-    mostrarMensajeAtaque("ataquePla", params.rPlayer);
-    mostrarMensajeAtaque("ataqueEne", params.rEnemi);
-    actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
-    actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
-  }
-  // Se intercambia EscuJuga y AtaEne
+  mostrarMensajeAtaque(mensajeAtaqueEnemi, defensaPlayer[EscuJuga], ataques[EscuJuga][AtaEne]);
 
-  actualizarPersonaje("vidaE", "mensajePerdidaa", salEnemi, "Ene", dead[1])
-  actualizarPersonaje("vidaJ", "mensajePerdida", salJuga, "pla", dead[0])
+  reem("pla", escuPlaGifs[EscuJuga], esperandoAtaque[0]);
+  reem("Ene", ataEneGifs[AtaEne], esperandoAtaque[1]);
+
+  actualizarPersonaje()
   verificarVidaJugador()
   cambiarTurno();
 }
 
+//funcion para evaluar quien pierde
+function actualizarPersonaje() {
+  const barraVida = document.getElementById("vidaJ",);
+  const barraVida2 = document.getElementById("vidaE");
+  const mensajePerdida = document.getElementById("mensajePerdida");
 
+  // Actualizar barra de vida
+  barraVida.style.width = salEnemi + "%";
+  barraVida.style.width = salJuga + "%";
+  // Verificar si se ha perdido
+  if (salJuga <= 0) {
+    salJuga = 0;
+    verificarVidaJugador();
+    barraVida.style.width = '0%';
+    barraVida.classList.add('red');
+    reem("Ene", "acces/Enemi/WinnerEnemi/enemiPlay.gif", "acces/Enemi/WinnerEnemi/enemiPlay.gif");
+    reem("pla", dead[0], dead[0]);
+    mensajePerdida.innerHTML = "Perdiste";
+    mensajePerdida.style.display = 'block';
+    reproducirSonido("acces/sounds/lose.mp3");
+    ocuBtn("btn1");
 
-//Reinciar vida del jugador
-function reset(variable) {
-  if (variable === 'salJuga') {
-    reem("pla", esperandoAtaque[0], esperandoAtaque[0]);
-    salJuga = 100;
-    barraVida = document.getElementById('vidaJ');
-    barraVida.style.width = `${salJuga}%`;
-    barraVida.classList.add('green');
-    mensajePerdida.style.display = "none";
-    mosBtn();
-  } else if (variable === 'salEnemi') {
-    reem("Ene", esperandoAtaque[1], esperandoAtaque[1]);
-    salEnemi = 100;
-    barraVida = document.getElementById('vidaE');
-    barraVida.style.width = `${salEnemi}%`;
-    barraVida.classList.add('green');
-    mensajePerdida.style.display = "none";
-    mosBtn();
+  } else if (salEnemi <= 0) {
+    verificarVidaJugador();
+    barraVida2.style.width = '0%';
+    barraVida2.classList.add('red');
+    reem("pla", "acces/Player/WinnerPlayer/winnerPlay.gif", "acces/Player/WinnerPlayer/winnerPlay.gif");
+    reem("Ene", dead[1], dead[1]);
+    mensajePerdida.innerHTML = "Ganaste";
+    mensajePerdida.style.display = 'block';
+    reproducirSonido("acces/sounds/win.mp3");
+    ocuBtn("btn1");
+
   }
 }
 
-
-var jugadorActual = 0;
-
+//funcion para cambiar el turno
 function cambiarTurno() {
+  console.log(jugadorActual);
   if (jugadorActual === 0) {
+    reemBtn("acces/iconos/AtaqueAgua.svg", "Ataque de Agua", `vidaEne(0)`);
+    reemBtn("acces/iconos/AtaqueFuego.svg", "Ataque de Fuego", "vidaEne(1)");
+    reemBtn("acces/iconos/AtaqueElectrico.svg", "Ataque Electrico", "vidaEne(2)");
     jugadorActual = 1;
-    ocuBtn("btn1","disabled");
-  } else {
-    ocuBtn("btn","disabled");
+  } else if (jugadorActual === 1) {
+    reemBtn("acces/iconos/EscudoAcuatico.svg", "Escudo de Agua", "vdSalJuga(0)");
+    reemBtn("acces/iconos/EscudoFuego.svg", "Escudo de Fuego", "vdSalJuga(1)");
+    reemBtn("acces/iconos/EscudoElectrico.svg", "Escudo Electrico", "vdSalJuga(2)");
     jugadorActual = 0;
   }
 }
+
+
+
+
