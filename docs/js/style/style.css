@@ -65,18 +65,19 @@ body {
 
 .player,
 .enemi {
-  flex: 1;
   text-align: center;
+}
+
+
+
+img {
+  width: 70%;
+  height: 85%;
 }
 
 .bar {
   background-color: #ccc;
   padding: 5px;
-}
-
-img {
-  width: 70%;
-  height: 85%;
 }
 
 /*Contenedor*/
@@ -96,10 +97,6 @@ img {
   background-color: red;
 }
 
-.bar-content {
-  line-height: 20PX;
-  color: white;
-}
 #btn1{
   margin-top: 20px;
   display: flex;
