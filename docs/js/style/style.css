@@ -26,6 +26,7 @@ body {
 }
 
 #ataqu {
+  font-family: 'Tomorrow', sans-serif;
   font-size: 200%;
   text-align: center;
   color: rgb(0, 0, 0);
@@ -59,8 +60,14 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
+}
+
+.player,
+.enemi {
   text-align: center;
 }
+
+
 
 img {
   width: 70%;
