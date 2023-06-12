@@ -276,7 +276,3 @@ function cambiarTurno() {
     jugadorActual = 0;
   }
 }
-
-
-
-
