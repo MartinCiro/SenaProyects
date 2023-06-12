@@ -6,8 +6,6 @@
 #ft {
   font-family: 'Bungee Spice', cursive;
   text-align: center;
-  background-color: #7453fa;
-  -webkit-background-clip: text;
 }
 
 body {
@@ -61,14 +59,8 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-}
-
-.player,
-.enemi {
   text-align: center;
 }
-
-
 
 img {
   width: 70%;
