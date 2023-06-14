@@ -1,11 +1,11 @@
 // Configuración de Firebase
 export const firebaseConfig = {
-  apiKey: "your_api_key",
-  authDomain: "your_auth_domain",
-  projectId: "your_project_id",
-  storageBucket: "your_storage_bucket",
-  messagingSenderId: "your_messaging_sender_id",
-  appId: "your_app_id"
+  apiKey: "AIzaSyC7gTiSk86I8d0ywX_qyebeh-xMQwxnuWs",
+  authDomain: "todo-13ec0.firebaseapp.com",
+  projectId: "todo-13ec0",
+  storageBucket: "todo-13ec0.appspot.com",
+  messagingSenderId: "269794992645",
+  appId: "1:269794992645:web:127e48795e6ddd10d0726c"
 };
 
 // Inicializar la app de Firebase
