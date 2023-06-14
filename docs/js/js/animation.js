@@ -18,6 +18,7 @@ function reemBtn(reemplazo, mode, fun) {
   newGif.addEventListener('click', function () {
     eval(fun); // Ejecutar la función pasada como argumento
   });
+  
   existingGif.appendChild(newGif);
 }
 
@@ -161,7 +162,7 @@ function reem(iD, reemplazo, rutActu) {
 
 //funcion del boton start y ocultar los creditos
 function go() {
-  //reproducirSonido("acces/sounds/inicio.mp3")
+  reproducirSonido("acces/sounds/inicio.mp3")
   sleep(5000).then(() => {
     var d = document.getElementById("ft");
     d.style.display = "none";
