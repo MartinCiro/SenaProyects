@@ -1,0 +1,60 @@
+CREATE TABLE habilitaciones (
+    id INT(11) PRIMARY KEY,
+    numero INT(11),
+    tipo VARCHAR(50),
+    piso INT(10),
+    ocupada TINYINT(1)
+);
+
+CREATE TABLE medicamentos (
+    id INT(11) PRIMARY KEY,
+    nombre VARCHAR(100),
+    descripcion VARCHAR(200),
+    existencias INT(11),
+    precio DECIMAL(10,2)
+);
+
+CREATE TABLE medicamentos_formulas (
+    medicamentosId INT(11),
+    formulariosId INT(11),
+    cantidad INT(11)
+);
+
+CREATE TABLE formulas (
+    id INT(11) PRIMARY KEY,
+    pacienteId INT(11),
+    medicoId INT(11),
+    fechaFormula DATE
+);
+
+CREATE TABLE medicos (
+    id INT(11) PRIMARY KEY,
+    nombre VARCHAR(100),
+    especialidad VARCHAR(50),
+    telefono VARCHAR(15),
+    correoe VARCHAR(100)
+);
+
+CREATE TABLE consultas (
+    id INT(11) PRIMARY KEY,
+    pacienteId INT(11),
+    medicoId INT(11),
+    fechaConsulta DATETIME,
+    duracionMinutos INT(11)
+);
+
+CREATE TABLE pacientes (
+    id INT(11) PRIMARY KEY,
+    nombre VARCHAR(100),
+    fechaNacimiento DATE,
+    genero VARCHAR(10),
+    direccion VARCHAR(200),
+    telefono VARCHAR(15)
+);
+
+CREATE TABLE ingresos (
+    id INT(11) PRIMARY KEY,
+    pacienteId INT(11),
+    fechaIngreso INT(11),
+    diagnostico VARCHAR(200)
+);
