@@ -23,7 +23,7 @@ const readForm = document.getElementById("read-form");
 readForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   try {
-    const collectionName = "users";
+    const collectionName = "verbs";
     const items = await readItems(collectionName);
     console.log(items);
   } catch (error) {

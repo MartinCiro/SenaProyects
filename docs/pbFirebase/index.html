@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firestore CRUD</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <h1>Firestore CRUD</h1>
+    <div id="dos">
+        <div class="creacionForm" id="crear">
+            <form id="create-form">
+                <h2>Crear documento</h2>
 
-    <form id="create-form">
-        <h2>Crear documento</h2>
-
-        <div id="replace"></div>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" required>
-        <br>
-        <label for="age">Edad:</label>
-        <input type="text" id="age" required>
-        <br>
-
+                    <label for="verb">Verbo:</label>
+                    <input type="text" id="verb" required>
+                    <!-- <br> -->
+                    <label for="Sgf">Significado: </label>
+                    <input type="text" id="Sgf" required>
+                    <!-- <br> -->
+                    <textarea id="use" rows="5" cols="30" placeholder="Uso"></textarea>
+                    <!-- <br> -->
+                    <label for="rutaImagenInput">Ruta imagen:</label>
+                    <input type="text" id="rutaImagenInput">
+                    <button type="submit" id="btnC">Crear</button>
+                
+            </form>
         </div>
-        <button onclick="crear()">Creaaar</button>
-        <button type="submit">Crear</button>
-    </form>
-
+        <div id="image"></div>
+    </div>
     <hr>
 
     <form id="read-form">
@@ -54,11 +59,16 @@
         <input type="text" id="delete-id" required>
         <br>
         <button type="submit">Eliminar</button>
+
     </form>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="js/modulos.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+
+
 </body>
+<script src="js/modulos.js" type="module"></script>
 
 </html>
