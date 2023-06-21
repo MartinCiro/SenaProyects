@@ -7,7 +7,7 @@
    width="1024"
    height="1024"
    viewBox="0 0 1024 1024"
-   sodipodi:docname="uj.svg"
+   sodipodi:docname="Should.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -180,9 +180,9 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:snap-global="false"
-     inkscape:zoom="0.47363281"
-     inkscape:cx="387.43093"
-     inkscape:cy="509.88867"
+     inkscape:zoom="0.23681641"
+     inkscape:cx="289.25361"
+     inkscape:cy="947.99176"
      inkscape:window-width="1360"
      inkscape:window-height="708"
      inkscape:window-x="0"
@@ -240,7 +240,7 @@
        id="path985-4-6"
        sodipodi:nodetypes="cccccccccccccccccc" />
     <path
-       style="fill:url(#linearGradient7412);stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:url(#linearGradient7412);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="M 535.08648,1022.1985 519.94765,734.49005 -1.0756042,412.8166 -10.731986,-6.077633 1041.7086,-11.086405 1031.1924,1036.7546 Z"
        id="path7404" />
     <text
