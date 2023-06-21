@@ -16,6 +16,6 @@ updateForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const updateId = document.getElementById("update-id").value;
     const updateAge = document.getElementById("update-age").value;
-    updateItem("users", updateId, { age: updateAge });
+    updateItem("verbs", updateId, { age: updateAge });
     updateForm.reset();
 });

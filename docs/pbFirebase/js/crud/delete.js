@@ -15,6 +15,6 @@ const deleteForm = document.getElementById("delete-form");
 deleteForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const deleteId = document.getElementById("delete-id").value;
-    deleteItem("users", deleteId);
+    deleteItem("verbs", deleteId);
     deleteForm.reset();
 });
