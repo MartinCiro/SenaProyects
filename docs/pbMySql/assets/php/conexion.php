@@ -4,11 +4,12 @@ $username_conexion = "root";
 $password_conexion = "";
 $database_conexion = "repaso";
 $nomTbl = "usuariosx";
+$conn = new mysqli($hostname_conexion, $username_conexion, $password_conexion, $database_conexion);
+
 function obtenerConexion() {
-    global $hostname_conexion, $username_conexion, $password_conexion, $database_conexion;
+    global $conn;
     
     try {
-      $conn = new mysqli($hostname_conexion, $username_conexion, $password_conexion, $database_conexion);
       if ($conn->connect_error) {
         throw new Exception("Error de conexión: " . $conn->connect_error);
       }
@@ -50,3 +51,4 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     return $theValue;
   }
 } 
+?>
