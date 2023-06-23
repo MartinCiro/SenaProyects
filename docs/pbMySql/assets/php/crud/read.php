@@ -1,8 +1,8 @@
 <?php
-function obtenerDatos($dats) {
+function obtenerDatos() {
     $conn = obtenerConexion();
     
-    $sql = "SELECT * FROM $dats";
+    $sql = "SELECT * FROM usuariosx";
     $result = $conn->query($sql);
     $datos = array();
     if ($result->num_rows > 0) {
