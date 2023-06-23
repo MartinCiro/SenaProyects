@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
 
 $conexion = obtenerConexion();
 
-$query_ActualizarR = "SELECT * FROM usuariosx WHERE id = '" . mysqli_real_escape_string($conexion, $colname_ActualizarR) . "'";
+$query_ActualizarR = "SELECT * FROM $nomTbl WHERE id = '" . mysqli_real_escape_string($conexion, $colname_ActualizarR) . "'";
 $ActualizarR = mysqli_query($conexion, $query_ActualizarR) or die(mysqli_error($conexion));
 
 $row_ActualizarR = mysqli_fetch_assoc($ActualizarR);

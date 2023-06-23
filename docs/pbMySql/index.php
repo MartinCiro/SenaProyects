@@ -15,13 +15,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
     $result = crearUsuario($nombre_completo, $correo, $usuario, $contrasena);
     
-    $insertGoTo = "menuprincipal.php";
-    if (isset($_SERVER['QUERY_STRING'])) {
-        $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-        $insertGoTo .= $_SERVER['QUERY_STRING'];
-    }
-    
-    header(sprintf("Location: %s", $insertGoTo));
+    Redirec("menuprincipal.php");
     
 }
 ?>

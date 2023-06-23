@@ -1,8 +1,9 @@
 <?php
+require_once('assets/php/funciones.php');
 function obtenerDatos() {
     $conn = obtenerConexion();
-    
-    $sql = "SELECT * FROM usuariosx";
+    global $nomTbl;
+    $sql = "SELECT * FROM $nomTbl";
     $result = $conn->query($sql);
     $datos = array();
     if ($result->num_rows > 0) {

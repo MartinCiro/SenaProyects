@@ -3,7 +3,7 @@ $hostname_conexion = "localhost";
 $username_conexion = "root";
 $password_conexion = "";
 $database_conexion = "repaso";
-
+$nomTbl = "usuariosx";
 function obtenerConexion() {
     global $hostname_conexion, $username_conexion, $password_conexion, $database_conexion;
     
