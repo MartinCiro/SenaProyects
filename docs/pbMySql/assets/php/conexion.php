@@ -20,35 +20,4 @@ function obtenerConexion() {
       exit;
     }
   }
-
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") {
-    $connection = obtenerConexion();
-    $theValue = $connection->real_escape_string($theValue);
-    $connection->close();
-  
-    switch ($theType) {
-      case "text":
-        $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-        break;
-      case "long":
-      case "int":
-        $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-        break;
-      case "double":
-        $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-        break;
-      case "date":
-        $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-        break;
-      case "defined":
-        $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-        break;
-      default:
-        $theValue = "NULL";
-        break;
-    }
-    return $theValue;
-  }
-} 
 ?>

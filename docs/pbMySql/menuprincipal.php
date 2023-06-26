@@ -7,7 +7,7 @@ require_once('assets/php/union.php');
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Documento sin título</title>
+  <title>Datos de la tabla</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
