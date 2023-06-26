@@ -1,0 +1,32 @@
+.mPr {
+    background-color: rgba(245, 183, 186, 0.226);
+    padding: 5px;
+    margin: 5px;
+}
+
+table {
+    width: 98vw;
+}
+
+th {
+    background: linear-gradient(to right, rgb(129, 7, 174), rgb(224, 34, 184));
+    color: rgba(247, 247, 247, 0.959);
+    border-radius: 8%;
+    font-size: 1.3rem;
+    border: 1px solid rgb(30, 31, 32);
+}
+
+td {
+    text-align: center;
+    font-size: 1.1rem;
+    border: 1px solid rgb(25, 118, 218);
+    border-radius: 3%;
+}
+
+button {
+    border: 1px solid rgba(51, 51, 50, 0.616);
+    border-radius: 50px;
+    padding: 5px 20px;
+    overflow: hidden;
+    cursor: pointer;
+}

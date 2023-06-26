@@ -4,11 +4,11 @@ $username_conexion = "root";
 $password_conexion = "";
 $database_conexion = "repaso";
 $nomTbl = "usuariosx";
-$conn = new mysqli($hostname_conexion, $username_conexion, $password_conexion, $database_conexion);
+$conn = null;
 
 function obtenerConexion() {
-    global $conn;
-    
+    global $hostname_conexion, $username_conexion, $password_conexion, $database_conexion;
+    $conn = new mysqli($hostname_conexion, $username_conexion, $password_conexion, $database_conexion);
     try {
       if ($conn->connect_error) {
         throw new Exception("Error de conexión: " . $conn->connect_error);

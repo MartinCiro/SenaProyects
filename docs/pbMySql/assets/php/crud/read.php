@@ -15,4 +15,5 @@ function obtenerDatos() {
     
     return $datos;
 }
+$datos = obtenerDatos();
 ?>
