@@ -130,12 +130,11 @@ function verificarVidaJugador() {
 
 //funcion para mostrar quien ganó y volver a la pagina de inicio
 function ocuBtn() {
-  const duration = 15000; //cantidad de segundos
   const boton = document.getElementById("btn1");
   boton.style.display = "none";
   setTimeout(() => {
     window.location.reload();
-  }, duration)
+  }, 15000)
 }
 
 //funcion para reemplazar el contenido de las tarjetas
@@ -210,7 +209,7 @@ function vidaEne(AtaJuga) {
 }
 
 //vida salud Jugador
-function vdSalJuga(EscuJuga) {
+let vdSalJuga = (EscuJuga) =>{
   reproducirSonido('acces/sounds/Escudo.mp3');
   AtaEne = Math.floor(Math.random() * 3);
   const mensajeAtaqueEnemi = ataquesEnemigo[AtaEne];
