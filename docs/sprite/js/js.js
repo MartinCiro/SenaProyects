@@ -1,16 +1,19 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+var canvasContainer = document.getElementById('canvas-container');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+pbH=100/100;
 
 // load images
 const images = {};
 images.player = new Image();
 images.player.src = '../acces/sprite.png';
-images.player.style.width = '250px';
 
-const playerWidth = images.player.width / 8;// "103.0625"; width/xFotogramaW
-const playerHeight = images.player.height / 1// "113.125"; Height/xFotogramaY
+let playerWidth = images.player.width / 8;// "103.0625"; width/xFotogramaW
+playerWidth=pbH*playerWidth;
+let playerHeight = images.player.height / 1// "113.125"; Height/xFotogramaY
+playerHeight=pbH*playerHeight;
 let playerFrameX = 0; //inicio en x
 let playerFrameY = 0; // inicio en y
 let playerX = 0;
@@ -34,9 +37,11 @@ window.addEventListener('resize', function () {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 })
+
+
 function resizeCanvas() {
-  canvas.width = canvasContainer.clientWidth;
-  canvas.height = canvasContainer.clientHeight;
+  canvas.width = 1952;//canvasContainer.clientWidth; <-supera el tamaño del contenedor
+  canvas.height = 1135;//canvasContainer.clientHeight;
 }
 
 window.addEventListener('resize', resizeCanvas);
