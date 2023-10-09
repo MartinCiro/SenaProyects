@@ -23,13 +23,13 @@ function reemBtn(reemplazo, mode, fun) {
 }
 
 
-var salJuga = 100;
-var salEnemi = 100;
-var EscuJuga;
-var EscuEne = Math.floor(Math.random() * 3);
-var AtaJuga;
-var AtaEne;
-var jugadorActual = 1;
+let salJuga = 100;
+let salEnemi = 100;
+let EscuJuga;
+let EscuEne = Math.floor(Math.random() * 3);
+let AtaJuga;
+let AtaEne;
+let jugadorActual = 1;
 
 const ataques = [
   [10, 20, 0],   // Agua para vidaEne

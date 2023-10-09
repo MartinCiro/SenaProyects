@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="p-1 w-50 mx-auto"> <!--Pading-->
+  <div class="container container-xl text-center rounded " style="background-color: rgba(2, 1, 3, 0.434);"> <!--Contenedor externo-->
+    <!-- <div>class="d-none"
+      <div class="row col-4 mx-auto">
+        <div class="p-2 rounded" style="background-color: rgba(107, 9, 204, 0.434); ">
+
+          <div class="rounded d-flex" style="background-color: rgba(2, 1, 3, 0.434);">
+            <div>
+              <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+              </div>
+            <object id="svgObject" data="src/img/papel.svg" type="image/svg+xml" class="p-2" width="100%"></object>
+            </div>
+<div class="p-5"></div>
+            <div>
+              <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">
+                </div>
+              </div>
+            <object id="svgObject" data="src/img/papel.svg" type="image/svg+xml" class="p-2" width="100%"></object>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-1 w-75 mx-auto m-3">
+          <span class="input-group-text" id="basic-addon1">a</span>
+          <input type="text" class="form-control" placeholder="Piedra" aria-label="Piedra"
+            aria-describedby="basic-addon1" disabled>
+        </div>
+        <div class="input-group mb-1 w-75 mx-auto m-2">
+          <span class="input-group-text" id="basic-addon1">s</span>
+          <input type="text" class="form-control" placeholder="Papel" aria-label="Papel" aria-describedby="basic-addon1"
+            disabled>
+        </div>
+        <div class="input-group w-75 mx-auto  m-2">
+          <span class="input-group-text" id="basic-addon1">d</span>
+          <input type="text" class="form-control" placeholder="Tijera" aria-label="Tijera"
+            aria-describedby="basic-addon1" disabled>
+        </div>
+      </div>
+    </div> -->
+    <div class="row p-2">
+      <div class="col-sm-6">
+        <div class="card" style="background-color: rgba(2, 1, 3, 0.434);">
+          <div class="card-body">
+            <h2 class="card-title text-light">Jugador</h2>
+            <object id="svgObject" data="src/img/papel.svg" type="image/svg+xml" class="p-2" width="100%"></object>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="background-color: rgba(2, 1, 3, 0.434);">
+          <div class="card-body">
+            <h2 class="card-title text-light">Maquina</h2>
+            <object id="svgObject" data="src/img/papel.svg" type="image/svg+xml" class="p-2" width="100%" style="transform: scaleX(-1);"></object>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="input-group mb-1 w-50 mx-auto m-2">
+      <span class="input-group-text" id="basic-addon1">a</span>
+      <input type="text" class="form-control" placeholder="Piedra" aria-label="Piedra"
+        aria-describedby="basic-addon1" disabled>
+    </div>
+    <div class="input-group mb-1 w-50 mx-auto m-2">
+      <span class="input-group-text" id="basic-addon1">s</span>
+      <input type="text" class="form-control" placeholder="Papel" aria-label="Papel" aria-describedby="basic-addon1"
+        disabled>
+    </div>
+    <div class="input-group w-50 mx-auto  m-2">
+      <span class="input-group-text" id="basic-addon1">d</span>
+      <input type="text" class="form-control" placeholder="Tijera" aria-label="Tijera"
+        aria-describedby="basic-addon1" disabled>
+    </div>
+  </div>
+  <!-- <object id="svgObject" data="src/img/spriteR.svg" type="image/svg+xml"></object>-->
+</body>
+<script src="src/js/keypress.js"></script>
+<script src="src/js/script.js"></script>
+
+</html>

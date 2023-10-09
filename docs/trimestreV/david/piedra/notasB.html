@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Repaso</title>
+</head>
+
+<body>
+    <div class="decl">
+        <ul>
+            <p>Declaracion de variable</p>
+            <li><b>const</b> es una variable que no cambia despues de ser declarada</li>
+            <li><b>let</b> es una variable que <u>no</u> cambia despues de ser declarada</li>
+            <code>
+                const hola = document.writeln("pepe");
+                <br>
+                hola = document.writeln("pepe2");
+            </code>
+            <h3>Tipos de datos</h3>
+            <ul>
+                <li><b>Number:</b> No tiene comillas <code>const n = 1;</code></li>
+                <li><b>String:</b> <u>Si</u> tiene comillas <code>const s = "1";</code></li>
+                <li><b>Float:</b> No tiene comillas pero tiene punto decimal <code>const f = 1.3;</code></li>
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;const numero = `esto es el numero ${1}`;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;const str = "";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;const flotante = 1.3;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;document.writeln(typeOf(numero));<br>
+                </code>
+                <script>
+                    const numero = `Esto es el numero ${1}`;
+                    const str = "";
+                    const flotante = 1.3;
+                    document.writeln(`Es de tipo: ${typeof(numero)}`);
+                </script>
+            </ul>
+            <h3>Cambiar el tipo de dato</h3>
+            <ul>
+                <li><b>String to number:</b> <code>parseInt(VariTxt)</code> ó <code>parseInt(VariFloat)</code></li>
+                <li><b>String to float:</b> <code>parseFloat(VariTxt)</code> ó <code>parseFloat(VariNum)</code></li>
+                <li><b>Number o Float to String:</b> <code>VarFloat.toString</code> ó <code>VarInt.toString</code></li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="fn">
+        <h2 class="text-center">funciones</h2>
+        <code>
+            function nombre(nom) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let hola = document.writeln(nom);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return hola;<br>  
+            }<br>
+            nombre("juanito");<br>
+            nombre("juanito2");<br>
+        </code>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
