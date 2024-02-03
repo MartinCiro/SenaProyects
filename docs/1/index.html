@@ -13,4 +13,17 @@
  <p class="two">Cambia el tamaño de la pestaña</p>
  
 </body>
+<script>
+    const palabra_Clave = ["agua", "ron"];
+    const xpathBase = '//*[@id="productos"]/div[contains(translate(., "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), "reempl")]';
+
+    /* ( | //*[@id="productos"]/div[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ron')] | //*[@id="search--no-results"])[1] */
+
+const generarXPath = () => { 
+    palabra_Clave.length > 0 ? `(${palabra_Clave.map(palabra => xpathBase.replace('reempl', palabra)).join(" | ")})[1]` : null
+};
+
+console.log(generarXPath());
+
+</script>
 </html>
